@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('************函数作为对象的方法被调用(谁调用我,我指向谁)*******************')  
+    var person = {
+      name: '张三',
+      run: function (time) {
+        console.log(`${this.name}在跑步,跑了${time}min`)
+      }
+    }
+    person.run(30);
+    person.run.call(person, 50);
+    </script>
+  </body>
+</html>

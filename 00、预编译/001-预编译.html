@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    function fn(a, c) {
+      console.log('001---a---',a);
+      var a = 123;
+      console.log('002---a---',a);
+      console.log('003---c---',c);
+      function a(){}
+      if(false) {
+        var d = 678;
+      }
+      console.log('004---d---',d);
+      console.log('005---b---',b);
+      var b = function(){};
+      console.log('006---b---',b);
+      function c(){}
+      console.log('007---c---',c);
+    }
+    fn(1, 2);
+
+    /*
+    预编译
+    作用域的创建阶段、预编译的阶段
+    预编译的时候做了哪些事情
+    js的变量对象、AO对象,供js引擎自己去访问的
+    1、创建ao对象; 
+    2、找形参和变量的声明,作为ao对象的属性名,值是undefined
+    3、实参和形参相统一
+    4、找函数声明,会覆盖变量的声明
+    */
+    
+    /*
+      001---a--- ƒ a(){}
+      002---a--- 123
+      003---c--- ƒ c(){}
+      004---d--- undefined
+      005---b--- undefined
+      006---b--- ƒ (){}
+      007---c--- ƒ c(){}
+    */
+    </script>
+  </body>
+</html>

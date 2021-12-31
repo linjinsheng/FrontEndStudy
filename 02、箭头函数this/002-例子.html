@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')  
+    var obj = {
+      birth: 1990,
+      getAge: function () {
+        var b = this.birth;
+        var fn = () => new Date().getFullYear() - this.birth;   //  this指向obj对象(找平级对象)
+        return fn();
+      }
+    }
+    let a = obj.getAge(); 
+    console.log('a----',a);  
+    </script>
+  </body>
+</html>

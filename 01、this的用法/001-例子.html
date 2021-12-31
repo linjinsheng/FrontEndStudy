@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************在函数中直接使用******************')  
+    function get(content) {
+      console.log(content);
+    }
+    get('你好');
+    get.call(window, '你好')
+    </script>
+  </body>
+</html>
