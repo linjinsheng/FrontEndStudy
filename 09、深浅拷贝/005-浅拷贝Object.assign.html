@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')  
+    let obj1 = {
+      person: {name: '刘德华', age: 18},
+      hobby:'唱歌'
+    };
+    let obj2 = Object.assign({}, obj1);
+    obj2.person.name = '乔丹';
+    obj2.hobby= '打篮球';
+    console.log('obj1----',obj1);
+    console.log('obj2----',obj2);
+    </script>
+  </body>
+</html>

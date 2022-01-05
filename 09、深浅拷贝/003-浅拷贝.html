@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')  
+    let obj1 = {
+      name: '撩课教育', 
+      arr: [1, [2,3], 4]
+    };
+    let obj3 = shallowClone(obj1);
+    obj3.name = 'itlike';
+    obj3.arr[1] = [5, 6, 7];  //  新旧对象还是共享同一块内存
+
+    function shallowClone(source){
+      let target = {};
+      for(let i  in source){
+        if(source.hasOwnProperty(i)){
+          target[i] = source[i];
+        }
+      }
+      return target;
+    }
+    console.log('obj1----',obj1);
+    console.log('obj3----',obj3);
+    </script>
+  </body>
+</html>

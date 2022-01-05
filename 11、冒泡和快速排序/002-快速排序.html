@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')  
+    let arr = [5,1, 2,3, 6,9,5,3];
+    let left = 0;
+    let right = arr.length-1;
+    quickSort(left, right, arr);
+    let newArr = arr;
+    
+    function quickSort(left, right, arr){
+      if(left >= right)return;
+      let i = 0, j = right, temp = arr[left];
+      let t = 0;
+      while( i < j){
+        while(i < j && arr[j] >= temp)j--;
+        while(i < j && arr[i] <= temp)i++;
+        if(i < j){
+          t = arr[i];
+          arr[i] = arr[j];
+          arr[j] = t;
+        }
+      }
+      arr[left] = arr[i];
+      arr[i] = temp;
+      quickSort(left, i-1, arr);
+      quickSort(i+1, right, arr);
+    }
+    
+    console.log('newArr---', newArr);
+    </script>
+  </body>
+</html>

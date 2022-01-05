@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>防抖函数---窗口拉伸</title>
+  </head>
+  <body>
+  <script>
+  function debounce(delay, callback){
+    let timer;
+    return function(value){
+      clearTimeout(timer);
+      timer = setTimeout(() =>{
+        callback && callback(value);
+      }, delay)
+    }
+  }
+
+  function logValue(value){
+    console.log('----执行了----');
+  }
+
+  let debounceResize = debounce(1000, logValue);
+  window.addEventListener('resize', function(e){
+    debounceResize();
+  })
+  </script>
+
+  </body>
+</html>

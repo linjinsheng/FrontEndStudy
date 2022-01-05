@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')  
+    let obj1 = {
+      name: '撩课教育', 
+      arr: [1, [2,3], 4]
+    };
+    console.log('constructor--', obj1.constructor)
+    let obj3 = deepClone(obj1);
+    obj3.name = 'itlike';
+    obj3.arr[1] = [5, 6, 7];  //  新旧对象还是共享同一块内存
+
+    function deepClone(obj){
+      if(obj === null)return obj;
+      if(obj instanceof Date) return new Date(obj);
+      if(obj instanceof RegExp) return new RegExp(obj);
+      if(typeof obj !== 'object')return obj;
+      let cloneObj = new obj.constructor(); 
+      for(let key  in obj){
+        if(obj.hasOwnProperty(key)){
+          cloneObj[key] =deepClone(obj[key]);
+        }
+      }
+      return cloneObj;
+    }
+    console.log('obj1----',obj1);
+    console.log('obj3----',obj3);
+    </script>
+  </body>
+</html>

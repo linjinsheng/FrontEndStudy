@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>防抖函数---滚动</title>
+  </head>
+  <style>
+    body{
+        height: 1900px;
+        width: auto;
+    }
+
+  </style>
+  <body>
+  <script>
+  function debounce(delay, callback){
+    let timer;
+    return function(value){
+      clearTimeout(timer);
+      timer = setTimeout(() =>{
+        callback && callback(value);
+      }, delay)
+    }
+  }
+
+  function logValue(value){
+    var scrollTop = document.documentElement.scrollTo || document.body.scrollTop;
+    console.log(scrollTop);
+  }
+  let debounceScroll = debounce(500, logValue);
+  window.addEventListener("scroll", function(e){
+    debounceScroll();
+  })
+  
+  </script>
+
+
+  </body>
+</html>

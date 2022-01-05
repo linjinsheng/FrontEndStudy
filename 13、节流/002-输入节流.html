@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>节流函数---input输入</title>
+  </head>
+  <body>
+    <div><label>做了节流: <input type="text" id="throttle"></label></div>
+  <script>
+    function throttle(wait, callback){
+      let previous = null;
+      let timer = null;
+      return function(value){
+        if(Date.now() - previous > wait){
+          clearTimeout(timer);
+          timer = null;
+          callback && callback(value);
+          previous = Date.now();
+        } else if(!timer){
+          timer = setTimeout(()=>{
+            callback && callback(value);
+            timer = null;
+          }, wait)
+        }
+      }
+    }
+    
+    function doSomething(value){
+      console.log('----输入为---', Math.random(), value);
+    }
+
+    let input = document.getElementById('throttle');
+    let throttleInput = throttle(1000, doSomething);
+    input.addEventListener('keyup', function(e){
+      throttleInput(e.target.value);
+    })
+  </script>
+
+  </body>
+</html>
