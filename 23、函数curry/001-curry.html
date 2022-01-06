@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************实现curry******************')  
+    /*
+      每次调用函数时,它只接受一部分参数,并返回一个函数,直到传递所有参数为止
+    */
+    function curry(fn){
+      var len = fn.length;
+      console.log('len---',len);
+      return function curry(...args){
+        //  传入的参数大于等于原始函数fn的参数个数,则直接执行该函数
+        if(args.length >= len){
+          //  null指向全局
+          return fn.apply(null, args);
+        } else {
+          //  传入的参数小于原始函数fn的参数个数时
+          return function(...args2){
+            //  则继续对当前函数进行curry化,返回一个接受所有参数(当前参数和剩余参数)的函数
+            return curry.apply(null, args.concat(args2));
+          }
+        }
+      }
+    }
+
+    function add(a, b, c) {
+      return a + b + c;
+    }
+    const res = curry(add);
+    console.log(res(1, 2, 3));
+    console.log(res(1)(2)(3));
+    console.log(res(1, 2)(3));
+    console.log(res(1)(2, 3));
+    </script>
+  </body>
+</html>
