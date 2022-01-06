@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************发布-订阅模式******************')  
+    //  定义发布者
+    var shoeObj = {};
+    //  有一个列表用来存放函数
+    shoeObj.list = [];
+    //  增加订阅者
+    shoeObj.listen = function(key, fn){
+      if(!this.list[key]){
+        this.list[key] = [];
+      }
+      this.list[key].push(fn);
+    }
+
+    //  发布消息
+    shoeObj.trigger = function (){
+      //  取出这个key
+      var key = Array.prototype.shift.call(arguments);
+      var fns = this.list[key];
+      //  遍历这个数组,然后执行这个函数
+      if(!fns || fns.length == 0)return;
+
+      for(var i = 0, fn; fn = fns[i++];){
+        fn.apply(this, arguments);
+      }
+    }
+
+    shoeObj.listen('red',function(size){
+      console.log(`小红订阅的尺码是${size}`);
+    })
+
+    shoeObj.listen('black',function(size){
+      console.log(`小明订阅的尺码是${size}`);
+    })
+
+    shoeObj.trigger('red', 37);
+    shoeObj.trigger('black', 42);
+
+    </script>
+  </body>
+</html>
