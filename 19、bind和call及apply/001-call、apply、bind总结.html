@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /*
+      call和apply都是用来修改函数中this的指向问题;
+      区别:
+      apply: this指向+传递参数的集合数组 
+      call: this指向+多个参数
+    */ 
+
+    /*
+      相同点:都可以改变函数内部的this指向
+      
+      不同点:
+      call和apply会调用函数，并改变函数内部this指向 
+      bind不会调用函数，但可以改变this指向 
+      call和bind传递参数是以列表形式，apply必须以数组形式传递
+      
+      应用场景:
+      call 经常做继承
+      apply经常跟数组有关系. 比如借助于数学对象实现数组最大值最小值 
+      bind 不调用函数,但是还想改变this指向. 比如改变定时器内部的this指向.
+    */ 
+
+
+
+
+    
+    </script>
+  </body>
+</html>

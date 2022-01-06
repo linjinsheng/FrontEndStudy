@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+
+      console.log('------apply()方法----')
+      var baby = {
+          message: 'My name is: '
+      }
+
+      function getName(firstName, lastName) {
+          console.log(this.message + firstName + ' ' + lastName)
+      }
+      getName.apply(baby, ['Dot', 'Dolby'])// My name is: Dot Dolby
+
+
+      //  apply方法第一个参数是要绑定给this的值，第二个参数是一个数组参数。
+      //  当第一个参数为null、undefined时，默认指向window。
+      var obj = {
+        name: 'andy'
+      }
+      function fn(arr) {
+          console.log(this);
+          console.log(arr);     //'pink'
+      }
+      // 传递的参数必须是数组形式
+      fn.apply(obj, ['pink']);
+
+       //  应用场景1：经常做继承
+      var arr = [1, 66, 3, 99, 50];
+      var max = Math.max.apply(Math, arr);
+      console.log(max);
+
+      //  应用场景2:  将类数组转化为数组
+      var arr1 = [1,2,3];
+      var arr2 = [4,5,6];
+      var total = [].push.apply(arr1, arr2);  
+      console.log("arr1",arr1);         // arr1 [1, 2, 3, 4, 5, 6]
+      console.log("arr2",arr2);         // arr2 [4,5,6]
+      console.log("total",total);       //6
+
+
+      {
+        console.log('*******************************')  
+        console.log('------实现继承----')
+        function Animal(name){
+          this.name = name;
+          this.showName = function(){
+                console.log(this.name);    
+            }    
+        }
+        
+        function Cat(name){
+          Animal.apply(this,[name]);    
+        }
+        
+        var cat = new Cat("咕咕");
+        cat.showName();             //  咕咕
+      }
+
+      {
+          console.log('*******************************')  
+          console.log('------多重继承----')
+          function Class10(){
+            this.showSub = function(a,b){
+                    console.log(a - b);
+                }   
+            }
+          
+          function Class11(){
+            this.showAdd = function(a,b){
+                  console.log(a + b);
+              }  
+          }
+          
+          function Class12(){
+              Class10.apply(this);
+              Class11.apply(this);   
+          }
+          
+          var c2 = new Class12();
+          c2.showSub(3,1);    //  2
+          c2.showAdd(3,1);    //  4
+        }
+
+    </script>
+  </body>
+</html>
