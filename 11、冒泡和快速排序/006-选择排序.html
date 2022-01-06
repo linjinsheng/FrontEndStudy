@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>冒泡排序1</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')  
+    let arr = [5,1, 2,3, 6,9,5,3];
+    function selectSort(arr){
+      let len = arr.length;
+      for(let end = len-1; end > 0; end--){
+        let maxIndex = 0;
+        for(let begin = 1; begin <= end; begin++){
+          if(arr[maxIndex] <= arr[begin]){
+            maxIndex = begin;
+          }
+        }
+        let tmp = arr[maxIndex];
+        arr[maxIndex] = arr[end];
+        arr[end] = tmp;
+      }
+      return arr;
+    }
+    let newArr = selectSort(arr);
+    console.log('newArr---',JSON.stringify(newArr));
+    </script>
+  </body>
+</html>
