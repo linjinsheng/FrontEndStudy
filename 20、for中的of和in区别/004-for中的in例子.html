@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      console.log('****for..in会遍历自定义属性***');
+      var userMsg = {
+          0: 'nick',
+          1: 'freddy',
+          2: 'mike',	
+          3: 'james'
+      };
+      
+      for(var key in userMsg){
+          console.log(key, userMsg[key]);	
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      console.log('****for in 会遍历自定义属性，for of不会***');
+      var arr = ['nick','freddy','mike','james'];
+      arr.name = "数组";
+      
+      for(var key in arr){
+          console.log(key+': '+arr[key]);	
+      }
+      console.log('-----------分割线-----------');
+      for(var item of arr){	
+          console.log(item);
+      }
+    </script>
+  </body>
+</html>

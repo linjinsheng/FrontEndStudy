@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('****for..of遍历对象数组里的每一项***');
+    var arr = [
+          { name:'nick', age:18 },
+          { name:'freddy', age:24 },
+          { name:'mike', age:26 },
+          { name:'james', age:34 }
+      ];
+      for(var item of arr){	
+          console.log(JSON.stringify(item));
+      }
+    </script>
+  </body>
+</html>
