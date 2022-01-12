@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /*
+      1、计算机通过二进制的方式存储数据
+      2、设置一个误差范围,叫做“机器精度”
+    */ 
+
+    function numberepsilon(arg1, arg2) {
+      return Math.abs(arg1- arg2) < Number.EPSILON;
+    }
+    console.log(numberepsilon(0.1 + 0.2, 0.3));     // true
+    </script>
+  </body>
+</html>

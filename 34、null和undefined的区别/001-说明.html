@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /*
+      null和undefined都是原始数据类型
+      null代表空对象
+      undefined代表未定义
+    */ 
+
+
+    /*
+     ==  先进行转换成操作数据类型,再进行比较
+     === 不进行转换成操作数据类型,仅比较
+    */
+
+    console.log(typeof undefined);      //  undefined
+    console.log(typeof null);           //  object
+
+    var un;
+    var n = null;
+    if(un == n){
+      console.log('equal');
+    } else {
+      console.log('unequal');
+    }
+
+    
+    </script>
+  </body>
+</html>
