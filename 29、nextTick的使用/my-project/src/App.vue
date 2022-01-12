@@ -9,6 +9,16 @@
     <button @click="changeMsg">
       Change the Message
     </button>
+
+    <div class="next-tick">
+      <ul ref="urlRef">
+        <li v-for="(item, index) in items" :key="index">
+          {{item}}
+        </li>
+      </ul>
+      <button @click="add">添加</button>
+    </div>
+
   </div>
 </template>
 
@@ -32,7 +42,8 @@ export default {
       msg0: 'Hello Vue.',
       msg1: '',
       msg2: '',
-      msg3: ''
+      msg3: '',
+      items:['项目1', '项目2', '项目3']
   	}
   },
   methods:{
@@ -49,6 +60,17 @@ export default {
         this.msg2 = this.$refs.msgDiv.innerHTML
       })
       this.msg3 = this.$refs.msgDiv.innerHTML
+    },
+    add() {
+      this.items.push(Math.random());
+      this.items.push(Math.random());
+      this.items.push(Math.random());
+      this.$nextTick(()=>{
+          //  获取子元素个数
+          const ulElem = this.$refs.urlRef;
+          const length = ulElem.childNodes.length;
+          console.log("length---", length);
+      })
     }
   }
 }
