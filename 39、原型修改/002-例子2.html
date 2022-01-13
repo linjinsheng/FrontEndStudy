@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    function Person(name) {
+      this.name = name;
+    }
+
+    Person.prototype = {
+      getName:function(){}
+    }
+    var p = new Person('hello');
+    p.constructor = Person;
+    console.log(p.__proto__ === Person.prototype);              //  true
+    console.log(p.__proto__ === p.constructor.prototype);       //  true
+    </script>
+  </body>
+</html>

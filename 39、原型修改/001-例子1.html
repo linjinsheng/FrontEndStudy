@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    function Person(name) {
+      this.name = name;
+    }
+
+    //  修改原型
+    Person.prototype.getName = function(){}
+    var p = new Person('hello');
+    console.log(p.__proto__ === Person.prototype);              //  true
+    console.log(p.__proto__ === p.constructor.prototype);       //  true
+    //  重写原型
+    Person.prototype = {
+      getName:function(){}
+    }
+    var p = new Person('hello');
+    console.log(p.__proto__ === Person.prototype);              //  true
+    console.log(p.__proto__ === p.constructor.prototype);       //  false
+    </script>
+  </body>
+</html>
