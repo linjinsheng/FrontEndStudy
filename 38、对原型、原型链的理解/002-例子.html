@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    function Person(name) {
+      this.name = name;
+      this.age = 18;
+      this.sayName = function(){
+        console.log(this.name);
+      }
+    }
+    //  创建实例
+    var person1 = new Person('John');
+    person1.sayName();
+    console.log(person1.__proto__ === Person.prototype);            // true
+    console.log(Person.__proto__ === Function.prototype);           // true
+    console.log(Person.prototype.__proto__ === Object.prototype);   // true
+    console.log(Object.__proto__ === Function.prototype);           // true
+    console.log(Object.prototype.__proto__ === null);               // true
+
+    /**
+     原型、原型链的理解
+     构造函数是一个对象,也是通过Function构造器产生
+     Person.__proto__ === Function.prototype
+
+     原型对象本身就是一个普通对象,而普通对象的构造函数是构造函数是Object
+     Person.prototype.__proto__ === Object.prototype
+
+     所有构造器都是函数对象,函数对象都是Function构造产生
+     Object.__proto__ === Function.prototype
+
+     Object的原型对象也有__proto__属性,指向null,null是原型链的顶端
+     Object.prototype.__proto__ === null
+
+     一切对象都是继承自Object对象,Object对象直接继承自根对象null
+     一切函数对象(包括Object对象)都是继承自Function对象
+     Object对象直接继承Function对象
+     */
+    </script>
+  </body>
+</html>
