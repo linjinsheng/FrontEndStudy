@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    var lk  = {
+      typeTargetAction:{},
+      //  1、添加用户
+      addUser: function(type, target, action){
+        //  1.1 判断有没有改类型
+        if(typeof this.typeTargetAction[type] === 'undefined'){
+          this.typeTargetAction[type] = [];
+        }
+        //  1.2 创建对象
+        var obj = {target: target, action: action};
+        this.typeTargetAction[type].push(obj);
+      },
+      //  2、发布消息
+      publishMsg: function(type, msgContent){
+        //  2.1 获取学科
+        var typeTargetActions = this.typeTargetAction[type] || [];
+        for(var i = 0, len = typeTargetActions.length; i < len; i++){
+          var obj = typeTargetActions[i];
+          var target = obj.target;
+          var action = obj.action;
+          action.call(target, msgContent);
+        }
+      }
+    };
+    var stu1 = {name:'张三'};
+    var stu2 = {name:'李四'};
+    lk.addUser('h5', stu1, function(msgContent){
+        console.info(msgContent, "已经推送给:", this.name);
+    })
+    lk.addUser('h5', stu2, function(msgContent){
+        console.info(msgContent, '已经推送给:', this.name);
+    })
+    lk.addUser('Java', stu1, function(msgContent){
+        console.info(msgContent, '已经推送给:', this.name);
+    })
+    lk.addUser('python', stu2, function(msgContent){
+        console.info(msgContent, '已经推送给:', this.name);
+    })
+    //  广播消息
+    lk.publishMsg('h5', 'h5学院消息: 今晚不上课');
+    lk.publishMsg('Java', 'Java学院消息: 今晚不上课');
+
+    /**
+      描述: 发布————订阅模式
+      1、有人发布;
+      2、有人订阅;
+      3、一旦有人发布,订阅者就可以收到消息
+      4、主动权在发布者手中
+      5、一个用户可以订阅多个类型的消息,做不同的操作
+     */
+    </script>
+  </body>
+</html>

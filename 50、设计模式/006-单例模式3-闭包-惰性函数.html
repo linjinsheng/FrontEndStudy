@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    var instance = null;
+    function Tool(){
+      //  1、声明
+      var instance = this;
+      var oldProtoType = Tool.prototype;
+
+      this.name = '张三';
+      this.age = 18;
+
+      //  2、惰性函数(函数只会被执行一次,后面直接使用)
+      Tool = function(){
+        return instance;
+      };
+      Tool.prototype = oldProtoType;
+      instance = new Tool();
+      instance.constructor = Tool;
+      return instance;
+    }
+
+      //  3、实例化
+      var t1 = new Tool();
+      Tool.prototype.run = function(){
+        console.log('跑');
+      }
+      var t2 = new Tool();
+      t1.run();
+      t2.run();
+      console.log(t1 === t2);
+    </script>
+  </body>
+</html>

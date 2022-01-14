@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    /**
+     简单工厂模式
+     用途: 给定不同的材料,生产不同属性值的产品,并把产品返回;
+     批量生产具备相同属性的产品
+     */
+    function makeCoffe(dou, water){
+      var obj = new Object();
+      obj.dou = dou;
+      obj.water = water;
+      obj.bili = dou/water;
+      return obj;
+    }
+    var coffee = makeCoffe(1, 10);
+    console.log('造出了纯度为----',coffee.bili,'的咖啡');
+    </script>
+  </body>
+</html>

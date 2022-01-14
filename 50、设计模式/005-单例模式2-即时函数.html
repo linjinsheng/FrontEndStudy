@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    (function(w){
+      var instance = null;
+      function Tool(){
+        //  1、判断
+        if(instance){
+          return instance;
+        }
+        //  2、指向
+        instance = this;
+        this.name = '撩课学院';
+        this.intro = 'IT赚钱';
+      }
+      w.Tool = Tool;
+    })(window);
+    
+      //  3、实例化
+      var t1 = new Tool();
+      var t2 = new Tool();
+      var t3 = new Tool();
+      console.log(t1 === t2);
+      console.log(t1 === t3);
+      console.log(t2 === t3);
+    </script>
+  </body>
+</html>

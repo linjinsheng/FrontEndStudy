@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    /**
+     复杂工厂模式
+     用途: 可以根据不同类型的,创建不同的产品
+     */
+    function FruitMaker(){}
+    FruitMaker.prototype.make = function(type, meta){
+      //  1、判断工厂是否具备生产的能力
+      if(typeof this[type] ==='function'){
+        var func = this[type];
+        func.prototype = FruitMaker.prototype;
+        return new func(meta);
+      } else {
+        throw '很抱歉,工厂不能生产这个产品';
+      }
+    };
+    //  扩展生产线
+    FruitMaker.prototype.extend = function(obj){
+      for(var key in obj){
+        this[key] = obj[key];
+      }
+    };
+    //  苹果汁,梨子汁
+    FruitMaker.prototype.extend({
+      'Apple': function(meta){
+        console.log('造了一杯苹果汁,材料有', meta);
+      },
+      'Pear': function(meta){
+        console.log('造了一杯梨子汁,材料有', meta);
+      },
+    })
+
+    //  实例化
+    var maker = new FruitMaker();
+    var appleObj = maker.make('Apple', '一个苹果,一斤水');
+    console.log(appleObj.constructor.name);
+
+    var pearObj = maker.make('Pear', '两个梨子,一顿水');
+    console.log(pearObj.constructor.name);
+    </script>
+  </body>
+</html>

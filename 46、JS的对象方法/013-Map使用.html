@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')  
+    console.log('------Map-----')
+    const map = new Map([
+        ["foo",1],
+        ["bar",2],
+    ])
+    for(let key of map.keys()){
+        console.log(key);                     // foo bar
+    }
+    for(let value of map.values()){
+        console.log(value);                  // 1 2
+    }
+    for(let items of map.entries()){
+        console.log(items);                   // ["foo",1]  ["bar",2]
+    }
+    map.forEach( (value,key,map) => {
+        console.log(key,value);              // foo 1    bar 2
+    })
+    </script>
+  </body>
+</html>
