@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      console.log('*******************************')  
+      console.log('------解法3、let 创建块级作用域-----')
+      for(let i = 0; i < 5; i++) {
+          setTimeout(function() {
+            console.log(i);
+          }, 200);
+      }; 
+      // 0 1 2 3 4 
+    </script>
+  </body>
+</html>

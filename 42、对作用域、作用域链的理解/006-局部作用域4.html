@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      console.log('*******************************');
+      console.log('-----立即执行函数-----');
+      (function() {
+        var testValue = 123;
+        var testFunc = function () { 
+          console.log('just test'); 
+        };
+      })();
+      console.log(window.testValue);  //undefined
+      console.log(window.testFunc);   // undefined
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      console.log('*******************************')  
+      console.log('------通过闭包访问函数内部变量-----')
+      function bar(value) {
+        var testValue = 'inner';
+        var rusult = testValue + value;
+        function innser() {
+            return rusult;
+        };
+        return innser();
+      }
+     console.log(bar('fun'));         // "innerfun"
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      console.log('*******************************')  
+      console.log('------解法1、调用函数，创建函数作用域-----')
+      for(var i = 0; i < 5; i++) {
+        abc(i);
+      };
+
+      function abc(i) {
+        setTimeout(function() {
+          console.log(i);   
+        }, 200); 
+      } 
+      // 0 1 2 3 4 
+    </script>
+  </body>
+</html>

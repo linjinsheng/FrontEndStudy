@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      console.log('*******************************')  
+      console.log('------解法2、采用立即执行函数，创建函数作用域-----')
+      for(var i = 0; i < 5; i++) {
+        (function(j) {
+          setTimeout(function() {
+            console.log(j);
+          }, 200);
+        })(i);
+      };
+      // 0 1 2 3 4 
+    </script>
+  </body>
+</html>

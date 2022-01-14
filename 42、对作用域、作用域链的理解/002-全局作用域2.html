@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+      console.log('------显式声明-----')
+      var testValue = 123;
+      var testFunc = function () { 
+        console.log('just test') 
+      };
+      /**---------全局变量会挂载到 window 对象上------------**/
+
+      console.log(window.testFunc)  // ƒ () { console.log('just test') }
+      console.log(window.testValue)  // 123
+    </script>
+  </body>
+</html>

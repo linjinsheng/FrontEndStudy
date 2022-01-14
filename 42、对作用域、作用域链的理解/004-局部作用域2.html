@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      console.log('*******************************')  
+      console.log('------通过return访问函数内部变量-----')
+      function bar(value) {
+      var testValue = 'inner';
+        return testValue + value;
+      }
+      console.log(bar('fun'));          // "innerfun" 
+    </script>
+  </body>
+</html>
