@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    var name = 'Jenny';
+    function person(){
+      console.log(this.name);
+    }
+
+    var obj = {
+      name: 'Tom',
+      person: function(){
+        console.log(this.name);
+      }
+    }
+    person();             // Jenny
+    obj.person();         // Tom
+
+    // 第1个this指向全局对象,第2个this指向obj对象
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    var name = 'Jenny';
+    function Person(name){
+      console.log(this);
+      this.name = name;
+      console.log(this);
+      return name;
+    }
+    var p = new Person('Jack');
+    console.log(p.name);          // Jack
+    //  this指向新创建的对象
+    </script>
+  </body>
+</html>

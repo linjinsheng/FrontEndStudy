@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')  
+    console.log('------扩展运算符的作用及使用场景----')
+    let bar = { a: 1, b: 2 };
+    let baz = { ...bar }; 
+    console.log(baz);         // { a: 1, b: 2 }
+
+    let bar1 = { a: 1, b: 2 };
+    let baz1 = Object.assign({}, bar1); 
+    console.log(baz1);        // { a: 1, b: 2 }
+
+    //  将数组转换为参数序列
+    function add(x, y) {
+      return x + y;
+    }
+    const numbers = [1, 2];
+    var addNumbers = add(...numbers);
+    console.log(addNumbers);                      // 3
+
+    //  合并数组
+    const arr1 = ['two', 'three'];
+    const arr2 = ['one', ...arr1, 'four', 'five'];
+    console.log(arr2);                            // ["one", "two", "three", "four", "five"]
+
+    //  使用Math函数获取数组中特定的值
+    const numbers1 = [9, 4, 7, 1];
+    console.log(Math.min(...numbers1));          // 1
+    console.log(Math.max(...numbers1));          // 9
+
+    </script>
+  </body>
+</html>

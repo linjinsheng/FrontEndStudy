@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    var name = 'Jenny';
+    function person(){
+      return this.name;
+    }
+
+    var obj = {
+      name: 'Jack'
+    }
+    console.log(person.call(this));       //  Jenny
+    console.log(person.apply(obj));       //  Jack
+
+    //  需要把this指向谁就把谁写在参数第一个位置
+    //  this绑定的对象
+    </script>
+  </body>
+</html>

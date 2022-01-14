@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************') 
+    console.log('------push方法-----')
+    var arr = ['a', 'b', 'c', 'd', 'e'];
+    var temp = arr.push('f');
+    console.info('temp: ' + temp);        // temp: 6
+    console.info(arr);                    // ["a", "b", "c", "d", "e", "f"]
+
+    temp = arr.push('g', 'h');
+    console.info('temp: ' + temp);        // temp: 8
+    console.info(arr);                    // ["a", "b", "c", "d", "e", "f", "g", "h"]
+    </script>
+  </body>
+</html>

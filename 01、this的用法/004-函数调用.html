@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    var name = 'Jenny';
+    function person(){
+      return this.name;
+    }
+    console.log(this.name);     //  Jenny
+    console.log(window.name);   //  Jenny
+    console.log(person());      //  Jenny
+
+    //  this指向window
+    //  name属于全局变量,全局变量属于window,所以this.name就是window.name
+    </script>
+  </body>
+</html>
