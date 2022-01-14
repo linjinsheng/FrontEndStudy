@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      function createPerson(original){
+          var clone = Object.create(original);   // 通过 Object.create() 函数创建一个新对象
+          clone.sayGood = function(){ // 增强这个对象
+                  console.log("hello world！！！");
+          };
+          return clone; // 返回这个对象 
+      }
+    </script>
+  </body>
+</html>

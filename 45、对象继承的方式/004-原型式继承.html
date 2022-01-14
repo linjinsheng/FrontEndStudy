@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+      const person = {
+        name: 'star',
+        colors: ['red', 'blue'],
+      }
+      //  核心代码
+      const person1 = Object.create(person);
+      const person2 = Object.create(person);
+
+      person1.name = 'litterstar';
+      person2.name = 'luckystar';
+
+      person1.colors.push('yellow');
+
+      console.log(person1.colors); // [ 'red', 'blue', 'yellow' ]
+      console.log(person2.colors); // [ 'red', 'blue', 'yellow' ]
+    </script>
+  </body>
+</html>
