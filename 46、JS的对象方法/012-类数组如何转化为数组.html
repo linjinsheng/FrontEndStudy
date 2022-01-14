@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    {
+      console.log('------采用Array.prototype.splice.call(array, 0)方法-----');
+      let array = {
+        0: 'name', 
+        1: 'age',
+        2: 'sex',　　　　                        //注意这些属性名的类型  是数值型
+        3: ['user1','user2','user3'],
+        length: 4                               //注意这里的length
+      }
+      let arr=[].splice.call(array, 0);         //等效于 let arr=Array.prototype.splice.call(array, 0);  
+      console.log(arr);                         // ['name','age','sex',['user1','user2','user3']]
+    }
+
+    {
+      console.log('------采用Array.prototype.slice.call(array)方法-----');
+      let array = {
+        '0': 'a',
+        '1': 'b',
+        '2': 'c',
+        length: 3
+      };
+      let arr=[].slice.call(array);            //等效于 let arr=Array.prototype.slice.call(array);
+      console.log(arr);                        //["a","b","c"]
+    }
+
+    {
+      console.log('------采用Array.from(array)方法-----');
+      let array = {
+            '0': 'a',
+            '1': 'b',
+            '2': 'c',
+            length: 3
+        };
+        let arr = Array.from(array);
+        console.log(arr);                      //["a","b","c"]
+    }
+
+    {
+      console.log('------采用Array.prototype.concat.apply([], array)方法-----');
+      let array = {
+        '0': 'a',
+        '1': 'b',
+        '2': 'c',
+        length: 3
+      };
+      let arr=[].concat.apply([], array);    // 等效于 let arr = Array.prototype.concat.apply([], array);
+      console.log(arr);                      // ["a","b","c"]
+    }
+    </script>
+  </body>
+</html>

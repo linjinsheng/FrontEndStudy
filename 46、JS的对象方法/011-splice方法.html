@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************') 
+    console.log('------splice方法-----')
+    var arr = ['a', 'b', 'c', 'd', 'e'];
+    var temp = arr.splice(2);
+    console.info(arr);          // ["a", "b"]
+    console.info(temp);         // ["c", "d", "e"]
+
+    arr = ['a', 'b', 'c', 'd', 'e'];
+    temp = arr.splice(2, 2);
+    console.info(arr);          // ["a", "b", "e"]
+    console.info(temp);         // ["c", "d"]
+    </script>
+  </body>
+</html>

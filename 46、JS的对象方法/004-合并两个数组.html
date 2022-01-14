@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************') 
+    console.log('------合并两个数组-----')
+    var arr1 = ['a', 'b', 'c'],
+        arr2 = ['x', 'y', 'z'];
+    var temp = Array.prototype.push.apply(arr1, arr2);
+    console.log(arr1); // ["a", "b", "c", "x", "y", "z"]
+    console.log(arr2); // ["x", "y", "z"]
+    console.log(temp); // 6
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************') 
+    console.log('------slice方法-----')
+    var arr = ['a', 'b', 'c', 'd', 'e'];
+    var temp1 = arr.slice(),
+        temp2 = arr.slice(1),
+        temp3 = arr.slice(1, 2);
+    console.info(arr);        // ["a", "b", "c", "d", "e"]
+    console.info(temp1);      // ["a", "b", "c", "d", "e"]
+    console.info(temp2);      // ["b", "c", "d", "e"]
+    console.info(temp3);      // ["b"]
+    </script>
+  </body>
+</html>
