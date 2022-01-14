@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    async function async1(){
+      console.log('async1 start')
+      await async2();
+      console.log('async1 end');
+    }
+
+    async function async2(){
+      console.log('async2');
+    }
+    console.log('script start');
+    async1();
+    console.log('sript end');
+
+    /**
+      script start
+      async1 start
+      async2
+      sript end
+      async1 end
+     */
+    </script>
+  </body>
+</html>
