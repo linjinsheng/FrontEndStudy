@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /*
+      https://segmentfault.com/a/1190000037573104
+      一、let的引入,块级作用域{},修复了var声明变量带来的变量提升问题
+         原来的问题: for循环var泄漏,变量覆盖
+      
+      二、对String字符串类型做的常用升级优化
+      1、模板字符串（``）
+      2、在String的原型上新增includes()方法，取代传统的indexof，语义更清晰
+      3、新增了startsWith(), endsWith(), padStart(),padEnd(),repeat()等方法
+
+      三、对Array数组类型做的常用升级优化
+      1、数组解构赋值
+      let [a,b,c] = [1,2,3]
+
+      2、扩展运算符
+      let a = [1,2,3];
+      let b = [...a]
+
+      3、find和findIndex方法
+      [NaN].indexOf(NaN) // -1
+      [NaN].find(x => Object.is(NaN, x)) // NaN
+      [NaN].findIndex(x => Object.is(NaN, x)) //0
+
+      4、copyWithin
+      [1, 2, 3, 4, 5].copyWithin(-2)
+      // [1, 2, 3, 1, 2]
+
+      [1, 2, 3, 4, 5].copyWithin(0, 3)
+      // [4, 5, 3, 4, 5]
+
+      5、includes
+      [1,2,3].includes(1) // true
+
+      6、fill
+      [1,2,3].fill(6,1) // [1, 6, 6]
+
+      7、flat
+      [1,2,[3,4,[5,6]]].flat(2) // [1,2,3,4,5,6] 
+
+      四、对Number数字类型做的常用升级优化
+
+      五、对Object类型做的常用升级优化
+      1、对象属性变量式声明
+      let { a,b,c } = obj
+      let newObj = {a:a,b:b} //等价于下面的式子
+      let newObj = {a,b} 
+
+      2、对象解构赋值
+      let { a,b } = { a:1, b:2 }
+
+      3、对象扩展运算符
+      let { a,...rest } = {a:1, b:2, c:3 } // rest = { b:2, c:3 }
+      let obj1 = { a:1, b:2 }
+      let obj2 = {...obj1, c: 3}
+
+      六、对Function函数类型做的常用升级优化
+      1、箭头函数
+      改变了this的指向，为函数定义时所在的对象，而不是执行时。
+      2、函数默认赋值
+      function fn(a = 1, b) {}
+    */ 
+    
+    </script>
+  </body>
+</html>
