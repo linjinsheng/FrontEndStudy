@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+        // 定义一个对象
+        var obj = {
+          x: 100,
+          show(){
+            setTimeout(
+              function(){
+                console.log(this.x);
+              },500);
+          }
+        };
+        obj.show(); //  undefiend
+
+    </script>
+  </body>
+</html>
+
+

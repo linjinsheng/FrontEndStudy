@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+        // 箭头函数中的this指向的是定义时的this，而不是执行时的this
+        var a = 200;
+        var obj = {
+          x: 100,
+          show(){
+            setTimeout(
+              ()=>{
+                console.log(this.x);
+                console.log(this.a);
+              },500);
+          }
+        };
+        obj.show(); 
+        //  100
+        //  undefined
+
+    </script>
+  </body>
+</html>
+
+
