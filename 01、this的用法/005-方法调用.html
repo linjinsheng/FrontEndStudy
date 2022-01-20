@@ -19,8 +19,8 @@
         console.log(this.name);
       }
     }
-    person();             // Jenny
-    obj.person();         // Tom
+    person.call(window);             // Jenny
+    obj.person.call(obj);         // Tom
 
     // 第1个this指向全局对象,第2个this指向obj对象
     </script>
