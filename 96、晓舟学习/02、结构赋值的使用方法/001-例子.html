@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    //  数组的结构赋值
+    // let [a, b] = [10, 20];
+    let a = 10;
+    let b = 20;
+    [a, b] = [b, a];
+    console.log(a);   // 20
+    console.log(b);   // 10
+
+    //  对象的结构赋值
+    let {name, age} = {
+      name: "小明",
+      age: 20,
+      friend: "小红"
+    }
+    console.log(name);   // 小明
+    console.log(age);    // 20
+
+    function createStudent(){
+      let name = "小明";
+      let age = 10;
+      let friend = "小红";
+      return {
+        name,
+        age,
+        friend
+      }
+    }
+    let obj = createStudent();
+    console.log(obj);   //  {name: '小明', age: 10, friend: '小红'}
+    let {friend} = obj;
+    console.log(friend);  // 小红
+    </script>
+  </body>
+</html>

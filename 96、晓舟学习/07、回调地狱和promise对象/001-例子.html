@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    //  获取奶茶的方法
+    function getTea(fn){
+      setTimeout(() => {
+        fn("奶茶");
+      }, 500)
+    }
+
+    function getHotPot(fn){
+      setTimeout(() => {
+        fn("火锅");
+      }, 800)
+    }
+
+    getHotPot(function(data){
+      console.log(data);
+          //  调用获取奶茶的方法
+          getTea(function(data){
+            console.log(data);
+          })
+    })
+    </script>
+  </body>
+</html>

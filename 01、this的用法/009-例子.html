@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    class Person {
+      constructor(name, age){
+        console.log('constructor里的this', this);
+        this.name = name;
+        this.age = age;
+      }
+      test() {
+        console.log('对象方法里的this', this);
+      }
+
+      asyncTest(){
+        console.log('this', this);
+        // setTimeout(function(){
+        //   console.log('setTimeout回调中的this',this);
+        // }, 0)
+          setTimeout(()=>{
+          console.log('setTimeout回调中的this',this);
+        }, 0)
+      }
+    }
+
+    const zhongsan = new Person('张三', 20);
+    zhongsan.test();
+    zhongsan.asyncTest();
+    </script>
+  </body>
+</html>

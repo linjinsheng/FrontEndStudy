@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <style>
+      body{height: 2000px};
+    </style>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    //  节流: 控制执行次数
+    //  控制高频事件执行次数
+    let flag = true;
+    window.onscroll = function(){
+      if(flag){
+        setTimeout(()=>{
+          console.log("Hello World");
+          flag = true;
+        }, 500);
+      }
+      flag = false;
+    }
+    </script>
+  </body>
+</html>

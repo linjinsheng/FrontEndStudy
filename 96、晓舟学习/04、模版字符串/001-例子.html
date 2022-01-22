@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div class="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /**
+     模版字符串中写html特别方便
+     */
+    let a = "hello world";
+    let b = "test";
+    // let str = "我是\"超人\"";
+    let str = `我是"超人"`
+    console.log(str);     //  我是"超人"
+    let container = document.querySelector(".container");
+    let banana = "香蕉";
+    let apple = "苹果";
+    container.innerHTML = `<h1>hello world</h1>
+                            <ul>
+                            <li>${banana}</li>
+                            <li>${apple}</li>
+                            <li>荔枝</li>
+                            </ul>`
+    console.log(container); 
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <input type="text"></input>
+    <script>
+    console.log('*******************************')
+    //  防抖: 用户触发时间过于频繁,只要最后一次事件的操作
+      let inp = document.querySelector("input");
+      let t = null;
+      inp.oninput = function(){
+        if(t !== null){
+          clearTimeout(t);
+        }
+        t = setTimeout(()=>{
+          console.log(this.value);
+        }, 500);
+      }
+    </script>
+  </body>
+</html>

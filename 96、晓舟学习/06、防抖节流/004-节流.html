@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <style>
+      body{height: 2000px};
+    </style>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    //  节流: 控制执行次数
+    //  控制高频事件执行次数
+    window.onscroll = throttle(function(){
+      console.log("Hello World");
+    },500);
+
+    function throttle(fn, delay){
+      let flag = true;
+      return function(){
+        if(flag){
+        setTimeout(()=>{
+            fn.call(this);
+            flag = true;
+          }, delay);
+        }
+        flag = false;
+      }
+    }
+    </script>
+  </body>
+</html>

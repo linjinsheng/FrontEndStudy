@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /**
+     箭头函数
+     ()中定义参数,如果只有一个参数,可以不写括号;
+     {}中写函数题,如果函数体中只有返回值,可以不写return
+     */
+    // function fun(){
+    //   return 100;
+    // }
+
+    // const fun = function(){
+    //   return 100;
+    // }
+    
+    // const fun = ()=>{
+    //   return 100;
+    // }
+    
+    const fun = () => 100;
+    console.log(fun());
+
+    let obj = {
+      name: "小明",
+      age: 10,
+      sayName(){
+        // console.log(`我是${this.name}`);
+        let self = this;
+        setTimeout(function(){
+          console.log(`我是${self.name}`);        //  我是小明
+        }, 500);                        
+      }
+    }
+    obj.sayName();
+
+    </script>
+  </body>
+</html>
