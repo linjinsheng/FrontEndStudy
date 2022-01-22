@@ -19,6 +19,7 @@
     //  创建实例
     var person1 = new Person('John');
     person1.sayName();
+    console.log(person1.prototype); 
     console.log(person1.__proto__ === Person.prototype);            // true
     console.log(Person.__proto__ === Function.prototype);           // true
     console.log(Person.prototype.__proto__ === Object.prototype);   // true
