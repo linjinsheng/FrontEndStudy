@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    //  链接地址 https://jioho.gitee.io/blog/js_%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE.html#%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93
+    //  func称为构造函数
+    function func() {}
+    console.log(typeof func.prototype);   // object
+    console.log(typeof func.__proto__);   // function
+
+    const obj = {}
+    console.log(typeof obj.__proto__);    // object
+    console.log(typeof obj.prototype);    //  undefined
+
+    console.log(obj.__proto__ === Object.prototype); // true
+    console.log(func.__proto__ === Function.prototype); // true
+    console.log(func.__proto__ === Function.prototype); // true
+
+    console.log(func.__proto__);            //  ƒ () { [native code] }
+    console.log(func.constructor);          // ƒ Function() { [native code] }
+    console.log(func.prototype);            // {constructor:{},__proto__:{}}
+
+    console.log(typeof func.prototype);                           //  object
+    console.log(func.prototype.__proto__ === Object.prototype);   //  true
+
+    </script>
+  </body>
+</html>
+

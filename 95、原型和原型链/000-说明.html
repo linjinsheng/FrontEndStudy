@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /**
+      对象类型	  __proto__	    prototype
+      普通对象	    ✅	             ❌
+      函数对象	    ✅	             ✅
+      
+      1、prototype是一个函数对象的原型
+      2、instance.constructor.prototype = instance.__proto__;
+      3、Object.prototype.__proto__ = null
+      4、只有函数对象有prototype属性,普通对象没有这个属性;
+      5、__proto__和prototype都是在创建一个函数或对象会自动生成的属性
+      6、实例的__proto__属性主动指向构造函数的prototype;
+      7、prototype属性被__proto__属性所指向
+      8、原型不断找到它的上一级的原型,找的过程形成的链条就是原型链;
+      9、func.prototype是一个对象,它的原型就是Object.prototype
+    */
+    </script>
+  </body>
+</html>
+
