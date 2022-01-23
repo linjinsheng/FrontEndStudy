@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /**
+      一、什么是执行上下文?
+      当前Javascript代码被解析和执行时存在的环境.
+
+      二、执行上下文的类型
+      1、全局执行上下文
+      默认的,最基础的执行上下文
+      1)、不在函数内部的代码都位于全局执行上下文
+      2)、创建一个全局对象,就是我们的window对象
+      3)、将this指针指向这个全局对象
+      
+      2、函数执行上下文
+      每次函数被调用的时候,就会创建一个新的执行上下文;
+      1)、每个函数都有自己的执行上下文;
+      2)、一个程序中可以存在任意数量的函数执行上下文;
+      3)、每一个函数执行上下文被创建的时候,都会按照特定的顺序执行一系列的步骤;
+      
+      3、eval函数的执行上下文
+      运行在eval函数中的代码也获得自己的执行上下文
+
+      三、执行上下文的生命周期
+      1、创建阶段
+      当函数被调用,但是未执行内部的任何代码之前,会做以下几件事:
+      1)、创建变量对象:首先会初始化函数的参数arguments,提升函数声明和变量声明;
+      2)、创建作用域链:在执行上下文创建阶段,作用域链是在变量对象之后创建的;作用域链本身
+      包含变量对象,作用域链用来解析变量;
+      3)、确定this指向
+
+      2、执行阶段
+      执行变量赋值,代码执行;
+
+      3、回收阶段
+      执行上下文出栈,等待虚拟机回收.
+
+      四、变量声明提升
+      console.log(this.a);   //  undefined
+      var a = 10;
+      console.log(b);   //  报错
+      let b = 100;
+
+      五、函数变量提升
+      函数声明方式: function foo(){}
+      函数表达式方式: var foo = function(){}
+      注意:
+      当遇到函数和变量同名都会被提升的情况下,函数声明优先级比较高,但是可以重新赋值.
+      console.log(f1);      //  ƒ f1(){}
+      function f1(){};
+      var f1 = 1;
+      console.log(f1);      //  1
+    */
+
+    console.log(a);       //  undefined
+    var a = 10;
+
+    console.log(f1);      //  ƒ f1(){}
+    var f1 = 1;
+    function f1(){};
+    console.log(f1);      //  1
+
+    console.log(f2);      //  undefined
+    var f2 = function(){};
+    
+    function f3(){
+      return 10;
+    }
+    var d = f3();
+    console.log(d);        //  10
+
+    console.log(b);        //  报错
+    let b = 100;
+
+
+    </script>
+  </body>
+</html>
+
