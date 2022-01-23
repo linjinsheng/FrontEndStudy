@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    const level1 = Symbol("level");
+    const level2 = Symbol("level");
+    const student = {
+      name: "小明",
+      age: 10,
+      [level1]: "优秀",
+      [level2]: "有钱"
+    }
+    const val = Object.getOwnPropertyDescriptor(student,"name");
+    console.log(val);
+    /**
+      configurable: true    // 属性是否可以删除
+      enumerable: true      // 属性是否可枚举
+      value: "小明"          // 属性值
+      writable: true        // 属性是否可以修改
+     */ 
+    Object.defineProperty(student, "gender", {
+      configurable: false,
+      enumerable: false,
+      value: "男", 
+      writable: true
+    })
+    delete student.gender;
+    console.log(student);
+    for(let pro in student){
+      console.log(pro);
+    }
+    </script>
+  </body>
+</html>

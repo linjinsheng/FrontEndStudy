@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    const sym = Symbol();
+    console.log(typeof sym);  //  symbol
+
+    const sym1 = Symbol("abc");
+    console.log(sym1);        //  Symbol(abc)
+    
+    const level = Symbol("level");
+    const student = {
+      name: "小明",
+      age: 10,
+      [level]: "优秀"
+    }
+    console.log(student);
+    for(let pro in student){
+      console.log(pro);
+    }
+    //  symbol属性不能被for...in获取
+    console.log(student[level]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    // JSON数据格式
+    const student1 = {
+      name: "小明",
+      age: 10,
+      girlFrined:{
+        name: "小红"
+      }
+    }
+
+    function deepCopy(obj){
+      let str = JSON.stringify(obj);
+      let newObj = JSON.parse(str);
+      return newObj;
+    }
+
+    const student2 = deepCopy(student1);
+    student1.girlFrined.name = "小花";
+    console.log(student1);
+    console.log(student2);
+    </script>
+  </body>
+</html>

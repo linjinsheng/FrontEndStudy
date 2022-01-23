@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    // 深拷贝
+    const student1 = {
+      name: "小明",
+      age: 10,
+      girlFriend:{
+        name:"小红"
+      }
+    }
+
+    function deepCopy(obj){
+      let newObj = {};
+      for(let i in obj){
+        if(obj[i] instanceof Object){
+          newObj[i] = deepCopy(obj[i]);
+        }else{
+          newObj[i] = obj[i];
+        }
+      };
+      return newObj;
+    }
+
+    const student2 = deepCopy(student1);
+    student1.girlFriend.name = "小花";
+    console.log(student1);
+    console.log(student2);
+    </script>
+  </body>
+</html>

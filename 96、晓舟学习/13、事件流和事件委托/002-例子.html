@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <ul>
+      <li>香蕉</li>
+      <li>苹果</li>
+      <li>鸭梨</li>
+    </ul>
+    <script>
+    console.log('*******************************')
+    // let li = document.querySelectorAll("li");
+    // let ul = document.querySelector("ul");
+    // for(let i = 0; i < li.length; i++){
+    //   li[i].onclick = function(){
+    //     ul.removeChild(this);
+    //   }
+    // }
+
+    //  利用事件委托来实现删除
+    let ul = document.querySelector("ul");
+    ul.onclick = function(e){
+      console.log(e.target.innerText);
+      ul.removeChild(e.target);
+    }
+    </script>
+  </body>
+</html>

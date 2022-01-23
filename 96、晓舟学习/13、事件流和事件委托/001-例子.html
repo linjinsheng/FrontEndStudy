@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <style>
+      .big{
+        width: 300px;
+        height: 300px;
+        background-color: red;
+      }
+      .center{
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+      }
+      .small{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="big"> 
+      <div class="center">
+        <div class="small"></div>
+      </div>
+    </div>
+    <script>
+    console.log('*******************************')
+    /**
+      链接地址
+      https://www.bilibili.com/medialist/play/478692215?from=space&business=space_series&business_id=473170&desc=1&spm_id_from=333.999.0.0
+      */
+     let big = document.querySelector(".big");
+     let center = document.querySelector(".center");
+     let small = document.querySelector(".small");
+     big.onclick = function(){
+       console.log("我是big");
+     }
+     center.onclick = function(event){
+      event.stopPropagation();
+       console.log("我是center");
+       console.log(event.target);
+     }
+     small.onclick = function(event){
+       event.stopPropagation();
+       console.log("我是small");
+       console.log(event.target);
+     }
+    </script>
+  </body>
+</html>

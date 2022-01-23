@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    const level1 = Symbol("level");
+    const level2 = Symbol("level");
+    console.log(level1 === level2);
+    const student = {
+      name: "小明",
+      age: 10,
+      [level1]: "优秀",
+      [level2]: "有钱"
+    }
+    console.log(Object.keys(student));
+    let pros = Object.getOwnPropertyNames(student);
+    console.log(pros);
+
+    for(let pro in student){
+      console.log(pro);
+    }
+    let symList = Object.getOwnPropertySymbols(student);
+    console.log(symList);
+    for(let pro of symList){
+      console.log(student[pro]);
+    }
+    </script>
+  </body>
+</html>

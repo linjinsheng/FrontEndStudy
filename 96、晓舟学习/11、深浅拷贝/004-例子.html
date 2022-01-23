@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    // 深拷贝
+    // 递归: 自己调自己
+    function fun(n){
+      if(n == 1){
+        return 1;
+      }else{
+        return n + fun(n-1);
+      }
+    }
+    let result = fun(3);
+    console.log(result);
+    </script>
+  </body>
+</html>
