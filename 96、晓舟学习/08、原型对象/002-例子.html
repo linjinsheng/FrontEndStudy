@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    function Cat(name, age){
+      this.name = name;
+      this.age = age;
+    }
+    let cat = new Cat("喵喵", 10);
+    Cat.prototype.eat = function(){
+      console.log("吃鱼");
+    }
+    cat.eat();
+
+    /**
+      获取原型的方法
+      1、是通过对象的__proto__获取;
+      2、是通过构造函数的prototype属性拿到原型
+     */
+    </script>
+  </body>
+</html>

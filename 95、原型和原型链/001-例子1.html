@@ -11,16 +11,23 @@
     console.log('*******************************')
     //  链接地址 https://jioho.gitee.io/blog/js_%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE.html#%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93
     //  func称为构造函数
-    function func() {}
-    console.log(typeof func.prototype);   // object
-    console.log(typeof func.__proto__);   // function
+    function func() {};
+    console.log(typeof func.__proto__);       // function
+    console.log(typeof func.prototype);       // object
 
-    const obj = {}
-    console.log(typeof obj.__proto__);    // object
-    console.log(typeof obj.prototype);    //  undefined
+    const obj = {};
+    console.log(typeof obj.__proto__);        // object
+    console.log(typeof obj.prototype);        // undefined
+    console.log(typeof Object.__proto__);     // function
+    console.log(typeof Object.prototype);     // object
+
+    const arr = [];
+    console.log(typeof arr.__proto__);        // object
+    console.log(typeof arr.prototype);        // undefined
+    console.log(typeof Array.__proto__);      // function
+    console.log(typeof Array.prototype);      // object
 
     console.log(obj.__proto__ === Object.prototype); // true
-    console.log(func.__proto__ === Function.prototype); // true
     console.log(func.__proto__ === Function.prototype); // true
 
     console.log(func.__proto__);            //  ƒ () { [native code] }

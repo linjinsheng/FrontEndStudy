@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    console.log(this);
+    //  全局函数其实是window(全局对象)的方法
+    function fun(){
+      console.log(this);
+    }
+    fun();
+    /**
+      1、直接输出this指向全局对象
+     */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    //  ES6的基本语法
+    class User{
+      constructor(username, password){
+        this.username = username;
+        this.password = password;
+      }
+      login(){
+        console.log("登录")
+      }
+    }
+
+    class Admin extends User{
+      deletePerson(){
+        console.log("删除用户");
+      }
+    }
+    let admin = new Admin();
+    admin.login();
+    admin.deletePerson();
+
+    </script>
+  </body>
+</html>

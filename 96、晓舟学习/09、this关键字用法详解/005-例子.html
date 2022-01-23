@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    let cat = {
+      name: "猫咪",
+      syaName(){
+        console.log(this);
+        setTimeout(()=>{
+          console.log(this);
+        }, 1000)
+      }
+    }
+    cat.syaName();
+    /**
+      1、普通函数,谁调用指向谁,箭头函数,在哪里定义指向谁;
+      2、箭头函数外指向谁指向谁;
+      3、箭头函数中没有this
+     */
+    </script>
+  </body>
+</html>

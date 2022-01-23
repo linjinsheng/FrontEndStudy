@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    let date = new Date();
+    Date.prototype.formate = function(){
+      let year = this.getFullYear();
+      let month = this.getMonth()+1;
+      let date = this.getDate();
+      return `${year}年${month}月${date}日`;
+    }
+    console.log(date.formate());
+
+    /**
+      原型对象有什么用?
+     */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    let cat = {
+      name: "猫咪",
+      syaName(){
+        console.log(this);
+        setTimeout(function(){
+          console.log(this);
+        }, 1000)
+      }
+    }
+    cat.syaName();
+    </script>
+  </body>
+</html>

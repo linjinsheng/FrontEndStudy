@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    //  ES6的基本语法
+    class Cat{
+      constructor(name, age){
+        this.name = name;
+        this.age = age;
+      }
+    }
+    Cat.prototype.eat = function(){
+      console.log("吃鱼");
+    }
+    let cat = new Cat("喵喵", 10);
+    console.log(cat.name);
+
+    /**
+      原型对象有什么用?
+     */
+    </script>
+  </body>
+</html>

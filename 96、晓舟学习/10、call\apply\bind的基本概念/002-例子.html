@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    function Animal(){
+      this.eat = function(){
+        console.log("吃东西");
+      }
+    }
+
+    function Bird(){
+      this.fly = function(){
+        console.log("飞行");
+      }
+    }
+
+    function Cat(){
+      Animal.call(this);
+      Bird.call(this);
+    }
+
+    let cat = new Cat();
+    cat.eat();
+    cat.fly();
+    /**
+      继承: 子类可以使用父类的方法
+     */
+    </script>
+  </body>
+</html>

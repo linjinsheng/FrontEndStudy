@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    <script>
+    console.log('*******************************')
+    function fun(){
+      console.log(this.name);
+    };
+    let cat = {
+      name: "猫猫"
+    }
+    fun.call(cat);
+    let dog = {
+      name:"旺财",
+      sayName(){
+        console.log("我是"+this.name);
+      },
+      eat(food1,food2){
+        console.log("我喜欢吃"+food1+food2);
+      }
+    }
+    dog.sayName.call(cat);
+    dog.eat("骨头","汤");
+    dog.eat.call(cat, "鱼", "肉");
+    dog.eat.apply(cat, ["鱼", "肉"]);
+    dog.eat.bind(cat, "鱼", "肉")();
+    /**
+      call是一个方法,是函数的方法
+      call可以调用函数,可以改变函数中this的指向
+     */
+    </script>
+  </body>
+</html>
