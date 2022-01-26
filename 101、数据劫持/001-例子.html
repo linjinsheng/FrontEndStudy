@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    let obj = {};
+    let name = '码不停息';
+    Object.defineProperty(obj, 'name', {
+      configurable: true, //  可删除
+      enumerable: true,   //  可枚举
+      get() {
+        return name;
+      },
+      set(newVal){
+        name = newVal
+      }
+    })
+    console.log(obj.name);
+    </script>
+  </body>
+</html>

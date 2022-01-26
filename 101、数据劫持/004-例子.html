@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    let obj = {
+      name: '码不停息',
+      frinend:{
+        name: '小花'
+      },
+      age: 18,
+      love: ['吃饭', '睡觉', '打豆豆']
+    };
+    function defineProperty(obj, key, val){
+      // obj的属性也可能是对象或者数组,可能需要递归
+      observer(val);
+      Object.defineProperty(obj, key, {
+        enumerable: true,
+        configurable: true,
+        get() {
+          //  读取方法
+          console.log('读取', key, '成功');
+          return val;
+        },
+        set(newval) {
+          //  赋值监听方法
+          if(newval === val)return;
+          observer(val);
+          console.log("监听赋值成功", newval);
+          val = newval;
+          //  可以执行渲染操作
+        }
+      })
+    }
+
+    function observer(obj){
+      if(typeof obj !== 'object' || obj === null){
+        return;
+      }
+      for(let key in obj){
+        //  给对象中的每一个方法都设置响应式
+        defineProperty(obj, key, obj[key]);
+      }
+    }
+
+    function set(obj, key, val){
+      defineProperty(obj, key, val);
+    }
+    observer(obj);
+    obj.love.push('学习');
+    </script>
+  </body>
+</html>
