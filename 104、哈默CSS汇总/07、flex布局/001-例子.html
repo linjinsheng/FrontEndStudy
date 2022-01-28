@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        display: flex;
+        justify-content: space-between;
+        width: 150px;
+        height: 150px;
+        border: 5px solid #ccc;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 10px;
+      }
+      .item {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: #666;
+        border-radius: 50%;
+      }
+      .item:nth-child(2){
+        align-self: center;
+      }
+      .item:nth-child(3){
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span class="item"></span>
+      <span class="item"></span>
+      <span class="item"></span>
+    </div>
+    <script>
+    console.log('*******************************')
+      /**
+        父级容器相关
+        flex-direction    主轴方向          水平方向、垂直方向
+        justify-content   主轴上的对齐方式   开始对齐、结束对齐、居中对齐、两端对齐align-items 交叉轴上
+        的对齐方式: 开始对齐、结束对齐、居中对齐
+
+        ## 子元素相关
+        align-self 子元素在交叉轴上的对齐方式  开始对齐、结束对齐、居中对齐
+        可以覆盖align-items属性
+      */
+    </script>
+  </body>
+</html>

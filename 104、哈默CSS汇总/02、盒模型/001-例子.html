@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>盒模型</title>
+    <style>
+      #box{
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin: 20px;
+        box-sizing: border-box;
+        /* box-sizing: content-box; */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>标题</h1>
+    <div id="box">
+      Hello from box!
+    </div>
+    <script>
+    console.log('*******************************')
+    console.log('offsetWidth---', document.getElementById('box').offsetWidth)
+    /**
+     内容区域
+
+     box-sizing: border-box
+     178 + (10+1)*2 = 200
+     offsetWidth: 200
+
+     box-sizing: content-box
+     200
+     offsetWidth: 200 + (10+1)*2 = 222
+     */
+    </script>
+  </body>
+</html>
