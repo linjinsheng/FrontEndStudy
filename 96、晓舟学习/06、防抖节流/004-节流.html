@@ -17,14 +17,19 @@
 
     function throttle(fn, delay){
       let flag = true;
+      let previous = null;
       return function(){
-        if(flag){
+      //  针对一进入就调用
+      if(Date.now()- previous > delay){
+        fn.call(this);
+        previous = Date.now();
+      }else if(flag){
         setTimeout(()=>{
             fn.call(this);
             flag = true;
           }, delay);
+          flag = false;
         }
-        flag = false;
       }
     }
     </script>

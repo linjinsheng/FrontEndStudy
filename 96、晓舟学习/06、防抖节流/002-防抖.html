@@ -9,7 +9,6 @@
     console.log('*******************************')
     //  防抖: 用户触发时间过于频繁,只要最后一次事件的操作
       let inp = document.querySelector("input");
-      let t = null;
       inp.oninput = debounce(function(){
           console.log(this.value);
       }, 500);

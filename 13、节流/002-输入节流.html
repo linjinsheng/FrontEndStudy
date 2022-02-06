@@ -11,11 +11,13 @@
       let timer = null;
       return function(value){
         if(Date.now() - previous > wait){
+          console.log('第一次进入');
           clearTimeout(timer);
           timer = null;
           callback && callback(value);
           previous = Date.now();
         } else if(!timer){
+          console.log('后面进入');
           timer = setTimeout(()=>{
             callback && callback(value);
             timer = null;
