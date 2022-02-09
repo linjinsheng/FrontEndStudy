@@ -12,6 +12,6 @@ process.nextTick(()=>{
 });
 console.log(1)
 setTimeout(()=>{console.log(2)}, 0);
-setTimeout(()=>{console.log(3)}, 0);
+setTimeout(()=>{console.log(3)}, 8);
 setTimeout(()=>{console.log(4)}, 10);
 console.log(5);
