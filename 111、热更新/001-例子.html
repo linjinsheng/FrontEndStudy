@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>我的网页</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>标题</h1>
+    <div>
+      <p>一段文字</p>
+      <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+      </ul>
+    </div>
+    <script>
+    console.log('*******************************')
+    /**
+    链接地址
+      https://blog.csdn.net/weixin_44475093/article/details/116479013
+      关于webpack热模块更新的总结
+      1、通过webpack-dev-server创建两个服务器：提供静态资源的服务（express）和Socket服务
+      2、express server 负责直接提供静态资源的服务（打包后的资源直接被浏览器请求和解析）
+      3、socket server 是一个 websocket 的长连接，双方可以通信
+      4、当 socket server 监听到对应的模块发生变化时，会生成两个文件.json（manifest文件）
+      和.js文件（update chunk）
+      5、通过长连接，socket server 可以直接将这两个文件主动发送给客户端（浏览器）
+      6、浏览器拿到两个新的文件后，通过HMR runtime机制，加载这两个文件，并且针对修改的模块进行更新
+     */
+    </script>
+  </body>
+</html>
