@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>我的网页</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>标题</h1>
+    <div>
+      <p>一段文字</p>
+      <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+      </ul>
+    </div>
+    <script>
+    console.log('*******************************')
+    /**
+    链接地址
+      https://blog.csdn.net/SunShinessx/article/details/88796916?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_default&utm_relevant_index=2
+      它能够不活动的组件实例保存在内存中，而不是直接将其销毁，它是一个抽象组件，不会被渲染到真实DOM中，
+      也不会出现在父组件链中。它提供了include与exclude两个属性，允许组件有条件地进行缓存。
+
+      https://blog.csdn.net/JackieDYH/article/details/107912417
+      应用场景
+      比如移动端页面的基本架构是tab点击来切换页面。每个页面都是一个组件，每次切换路由，
+      都会重新渲染这个组件。都得重新请求数据。这样会造成网络资源浪费，
+      而且页面在切换的时候因为重新渲染所以会有闪动，用keep-alive就可以实现页面DOM缓存，
+      解决页面切换闪动问题。
+      
+      原理
+      其实就是在created时将需要缓存的VNode节点保存在this.cache中,
+      在render时,如果VNode的name符合在缓存条件（可以用include以及exclude控制），
+      则会从this.cache中取出之前缓存的VNode实例进行渲染。
+     */
+    </script>
+  </body>
+</html>
