@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>我的网页</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>标题</h1>
+    <div>
+      <p>一段文字</p>
+      <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+      </ul>
+    </div>
+    <script>
+    console.log('*******************************')
+    /**
+      封装api组件模块
+      1、接口请求是异步的,返回promise对象;
+      2、网络url请求部分可以单独配知道网络请求中;
+      3、针对所有的接口可以进行统一处理;
+      4、借助第三方库axios快速封装网络请求模块;
+      5、interceptors拦截器在request设置超时,进行headers的配置;
+      6、interceptors拦截器在response针对返回response进行设置,统一处理异常返回;
+      7、使用asyn/await,处理promise组成的then链问题;
+
+      promise
+      1、对象,获取异步操作的消息,避免地狱回调,提供统一的api;
+      2、一个容器,保存着未来才会结束的事件rejected的结果;
+      3、三个状态: pending(进行中)、resolved(已完成)、rejected(已拒绝)
+      4、两个过程: 
+      pending-->fulfilled: Resolved(已完成)
+      pending-->rejected: Rejected(已拒绝)
+      5、特点
+      对象状态不受外界影响;一旦状态改变就不会再变,任何时候可以得到结果;
+      6、缺点
+      无法取消promise,无法中途取消;
+      如果不设置回调函数,promise内部跑出的错误,不会反应到外面;
+      当处于pending状态时,无法获知目前进展到哪一个阶段;
+
+      fetch优缺点
+      优点
+      1、语法简洁,更加语义化;
+      2、基于标准Promise实现,支持async/await;
+      3、更加底层,提供丰富的api(request、response)
+      4、脱离xhr,是ES规范中的新实现;
+      缺点
+      1、只对网络请求报错,对服务器返回400、500并不会reject;
+      2、默认不带cookie,需要添加配置项;
+      3、不支持abort,不支持超时控制;
+      4、没法原生监控请求的进度.
+
+      axios
+      1、从浏览器中创建XMLHttpRequest
+      2、支持Promise API
+      3、客户端支持防止CSRF;
+      4、提供并发请求的接口
+      5、从node.js中创建http请求;
+      6、拦截请求和相应;
+      7、转换请求和响应数据
+      8、取消请求
+      9、自动转换JSON数据
+     */
+    </script>
+  </body>
+</html>
