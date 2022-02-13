@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>我的网页</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>标题</h1>
+    <div>
+      <p>一段文字</p>
+      <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+      </ul>
+    </div>
+    <script>
+    console.log('*******************************')
+    /**
+     * 地址 https://blog.csdn.net/qdmoment/article/details/84024611
+      
+     applyMiddlewares的作用：它是 Redux 的原生方法，作用是将所有中间件组成一个数组，依次执行。
+      export default function applyMiddleware(...middlewares) {
+        return (createStore) => (reducer, preloadedState, enhancer) => {
+          var store = createStore(reducer, preloadedState, enhancer);
+          var dispatch = store.dispatch;
+          var chain = [];
+      
+          var middlewareAPI = {
+            getState: store.getState,
+            dispatch: (action) => dispatch(action)
+          };
+          chain = middlewares.map(middleware => middleware(middlewareAPI));
+          dispatch = compose(...chain)(store.dispatch);
+      
+          return {...store, dispatch}
+        }
+      }
+      
+      //执行顺序解析
+      //中间件数组传入{getState: store.getState,dispatch: (action) => dispatch(action)} => 
+      //compose合并新中间件数组 并传入dispatch=>
+      //执行完所有中间件函数后返回store和dispatch
+
+     */
+    </script>
+  </body>
+</html>
