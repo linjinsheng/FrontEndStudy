@@ -13,14 +13,14 @@
         background-color: red;
       }
       #div2{
-        position: absolute;
+        /* position: absolute; */
         top:200px;
         width: 100px;
         height: 100px;
         background-color: blue;
       }
       #div3{
-        position: absolute;
+        /* position: absolute; */
         top:100px;
         width: 50px;
         height: 50px;
@@ -52,21 +52,21 @@
         console.log('冒泡---div3 trigger');
       }
 
-      div1.addEventListener('click', function() {
-          console.log('捕获---div1')
-      }, {
-        capture:true
-      })
-      div2.addEventListener('click', function() {
-          console.log('捕获---div2')
-      }, {
-        capture:true
-      })
-      div3.addEventListener('click', function() {
-          console.log('捕获---div3')
-      }, {
-        capture:true
-      })
+      // div1.addEventListener('click', function() {
+      //     console.log('捕获---div1')
+      // }, {
+      //   capture:true
+      // })
+      // div2.addEventListener('click', function() {
+      //     console.log('捕获---div2')
+      // }, {
+      //   capture:true
+      // })
+      // div3.addEventListener('click', function() {
+      //     console.log('捕获---div3')
+      // }, {
+      //   capture:true
+      // })
 
       /**
        * 点击div3
