@@ -12,23 +12,45 @@
     //  节流: 控制执行次数
     //  控制高频事件执行次数
     window.onscroll = throttle(function(){
-      console.log("Hello World");
-    },500);
+      console.log('执行了', Date.now());
+    },1000);
 
-    function throttle(fn, delay){
-      let flag = true;
+
+    // function throttle(fun, delay) {
+    //     let timer = null;
+    //     let startTime = Date.now();
+    //     return function () {
+    //         let curTime = Date.now();
+    //         let remaining = delay - (curTime - startTime);
+    //         clearTimeout(timer);
+    //         if (remaining <= 0) {
+    //             fun.call(this);
+    //             startTime = Date.now();
+    //             console.log('第一次进入');
+    //         } else {
+    //             console.log('remaining---',remaining);
+    //             timer = setTimeout(fun, remaining);
+    //             console.log('第二次进入');
+    //         }
+    //     }
+    // }
+
+    function throttle(fun, delay){
       let previous = null;
+      let timer = null;
       return function(){
-      //  针对一进入就调用
-      if(Date.now()- previous > delay){
-        fn.call(this);
-        previous = Date.now();
-      }else if(flag){
-        setTimeout(()=>{
-            fn.call(this);
-            flag = true;
-          }, delay);
-          flag = false;
+        if(Date.now() - previous > delay){
+          console.log('第一次进入');
+          clearTimeout(timer);
+          timer = null;
+          fun.call(this);
+          previous = Date.now();
+        }else if(!timer){
+          console.log('第二次进入');
+          timer = setTimeout(() =>{
+            fun.call(this);
+            timer = null;
+          },delay)
         }
       }
     }
