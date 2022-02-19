@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')  
+    var name = 222;
+    var a = {
+      name: 111,
+      say: function(){
+        console.log(this.name);
+      }
+    }
+    var fun = a.say;
+    fun();          // 222  相当于fun.call(window)
+    a.say();        // 111  相当于 a.say.call(a)
+    </script>
+  </body>
+</html>
