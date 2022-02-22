@@ -6,13 +6,17 @@
   <body>
     <script>
     console.log('*******************************')
-    for(let i = 0; i < 5; i++){
-      setTimeout(() => {
-        console.log(i++);
-      }, 0);
+    for(var i = 0; i < 5; i++){
+      //  立即执行函数
+      (function(x){
+        setTimeout(() => {
+          console.log(x++);
+        }, 0);
+      })(i)
     }
-    console.log('i---',i);  // i报错,not defined
+    console.log(i);
     /**
+     5
      0
      1
      2
