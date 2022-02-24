@@ -9,21 +9,21 @@ export default class App extends Component {
   };
 
   onClick = ()=>{
-    //  异步
-    console.log('更新前, num---',this.state.num);
-    this.setState({
-      num: this.state.num + 1
-    })
-    console.log('更新后, num---',this.state.num);
+    // //  异步
+    // console.log('更新前, num---',this.state.num);
+    // this.setState({
+    //   num: this.state.num + 1
+    // })
+    // console.log('更新后, num---',this.state.num);
 
-    // //  同步
-    // console.log('setTimeout----更新前, num---',this.state.num);
-    // setTimeout(()=>{
-    //   this.setState({
-    //     num: this.state.num + 1
-    //   })
-    //   console.log('setTimeout----更新后, num---',this.state.num);
-    // }, 0)
+    //  同步
+    console.log('setTimeout----更新前, num---',this.state.num);
+    setTimeout(()=>{
+      this.setState({
+        num: this.state.num + 1
+      })
+      console.log('setTimeout----更新后, num---',this.state.num);
+    }, 0)
   }
   
   render() {
