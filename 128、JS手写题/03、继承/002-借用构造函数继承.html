@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>继承</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    function Animal(name){
+      this.name = name;
+      this.getName = function(){
+        return this.name;
+      }
+    }
+    function Dog(name){
+      Animal.call(this, name);
+    }
+    Dog.prototype = new Animal();
+
+    let dog1 = new Dog('baby');
+    console.log(dog1.name);         // baby
+    let dog2 = new Dog('hello');
+    console.log(dog2.getName());    // hello
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------数据类型检测4---Object.prototype.toString.call()-----')
+    var a = Object.prototype.toString;
+    console.log(a.call(2));                             // [object Number]
+    console.log(a.call(true));                          // [object Boolean]
+    console.log(a.call('str'));                         // [object String]
+    console.log(a.call([]));                            // [object Array]
+    console.log(a.call(function(){}));                  // [object Function]
+    console.log(a.call({}));                            // [object Object]
+    console.log(a.call(undefined));                     // [object Undefined]
+    console.log(a.call(null));                          // [object Null]
+    </script>
+  </body>
+</html>

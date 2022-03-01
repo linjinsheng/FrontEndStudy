@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------数据类型检测3---constructor-----')
+    console.log((2).constructor === Number);                // true
+    console.log((true).constructor === Boolean);            // true
+    console.log(('str').constructor === String);            // true
+    console.log(([]).constructor === Array);                // true
+    console.log((function() {}).constructor === Function);  // true
+    console.log(({}).constructor === Object);               // true
+
+    function Fn(){};
+    Fn.prototype = new Array();
+    var f = new Fn();
+    console.log(f.constructor===Fn);                        // false
+    console.log(f.constructor===Array);                     // true
+    </script>
+  </body>
+</html>

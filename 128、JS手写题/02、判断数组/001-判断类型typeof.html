@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------判断数组的方式有哪些-----')  
+    var obj = [1, 2, 3, 4, 5, 6, 7];
+    console.log('------判断数组1---通过Object.prototype.toString.call()-----')
+    console.log(Object.prototype.toString.call(obj).slice(8,-1) === 'Array');
+    console.log('------判断数组2---通过原型链来判断-----')
+    console.log(obj.__proto__ === Array.prototype);
+    console.log('------判断数组3---通过ES6的Array.isArray()来判断-----')
+    console.log(Array.isArray(obj));
+    console.log('------判断数组4---通过instanceof来判断-----')
+    console.log(obj instanceof Array);
+    console.log('------判断数组5---通过Array.prototype.isPrototypeOf()来判断-----')
+    console.log(Array.prototype.isPrototypeOf(obj));
+    </script>
+  </body>
+</html>

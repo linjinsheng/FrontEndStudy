@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>继承</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    function flatten(arr) {
+      while(arr.some(item => Array.isArray(item))){
+        arr = [].concat(...arr);
+      }
+      return arr;
+    }
+    let arr = [1, 2, [3, [4]]];
+    let arr1 = flatten(arr);
+    console.log('arr1--',arr1);
+    </script>
+  </body>
+</html>
