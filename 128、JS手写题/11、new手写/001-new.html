@@ -15,20 +15,6 @@
       3、新创建的对象绑定到当前this上
       4、如果没有返回其他对象,就返回obj,否则返回其他对象
     */
-    // function _new(curFun, ...arg){
-    //   const obj = {};
-    //   obj.__proto__ = curFun.prototype;
-    //   const result = curFun.apply(obj, arg);
-    //   return typeof result === 'object' ? result:obj;
-    // }
-
-    // function Foo(name){
-    //   this.name = name;
-    // }
-
-    // var luckyStar = _new(Foo, 'luckyStar');
-    // console.log(luckyStar.name);
-
     function _new(curFun, ...arg){
       const obj = {};
       obj.__proto__ = curFun.prototype;
