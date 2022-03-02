@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>浅拷贝</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------通过JSON对象来实现深拷贝-----')
+    function deepCopy(obj1){
+      var obj = JSON.stringify(obj1);
+      objClone = JSON.parse(obj);
+      return objClone;
+    }
+
+    var obj1 = {
+      a: 1,
+      b: 2,
+      c: {
+        d: 3
+      }
+    }
+    var obj2 = deepCopy(obj1);
+    obj2.a = 3;
+    obj2.c.d = 4;
+    console.log('obj1---',obj1);
+    console.log('obj2---',obj2);
+    </script>
+  </body>
+</html>

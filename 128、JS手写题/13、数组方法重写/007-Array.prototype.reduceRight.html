@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************Array.prototype.reduceRight******************')  
+     Array.prototype.myReduceRight = function(cb, initialValue) {
+        var _this = this;
+        var _len = _this.length;
+        var _arg3 = arguments[2] || window;
+        for(var i = _len; i >= 0; i--){
+          initialValue = cb.call(_arg3, initialValue, _this[i], i, _this);
+        }
+        return initialValue;
+     }
+     var arr = [0, 1, 2, 3, 4];
+     var res = arr.reduceRight(function(preValue, curValue, index, array) {
+          console.log(preValue, curValue)
+        return preValue + curValue; 
+      });
+     console.log(res);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************Array.prototype.reduce******************')  
+     Array.prototype.myReduce = function(cb, initialValue) {
+        var _this = this;
+        var _len = _this.length;
+        var _arg3 = arguments[2] || window;
+        for(var i = 0; i < _len; i++){
+          initialValue = cb.call(_arg3, initialValue, _this[i], i, _this);
+        }
+        return initialValue;
+     }
+     let initialValue = 0;
+     let arr = [1, 2, 3, 4];
+     let res = arr.myReduce(function(prev, item, index, array){
+       console.log("index--",index);
+       return prev + item;
+     }, initialValue);
+     console.log(res);
+    </script>
+  </body>
+</html>

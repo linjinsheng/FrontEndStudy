@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apply</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------Apply-----')
+    /**
+     * apply实现原理: 将执行函数置于目标上下文去执行,执行完成后删除,得到结果
+     */
+    Function.prototype.newApply = function(context, arg){
+      //  获取代指向的对象,没有就使用window
+      let ctx = context || window;
+      //  将当前调用newCall的函数临时复制给指定的上下文
+      ctx.fn = this;
+      //  将第二个数组参数解析为普通参数依次传递
+      const res = ctx.fn(...arg);
+      //  删除,避免污染全局
+      delete ctx.fn;
+      return res;
+    }
+
+    var name = "zhangsan";
+    var obj = {
+      name: "lisi",
+      getName: function(...arg){
+        console.log(this.name, ...arg);
+      }
+    };
+    obj.getName.newApply(obj, ['年龄22', '体重120']);
+    obj.getName.apply(obj, ['年龄22', '体重120']);
+    </script>
+  </body>
+</html>

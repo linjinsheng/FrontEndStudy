@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>继承</title>
+    <title>浅拷贝</title>
   </head>
   <body>
     <script>
     console.log('*******************************')
-    function flatten(arr) {
-      var result = [];
-      for(var i = 0, len = arr.length; i < len; i++){
-        if(Array.isArray(arr[i])){
-          result = result.concat(flatten(arr[i]));
-        }else{
-          result.push(arr[i]);
-        }
-      }
-      return result;
-    }
-    let arr = [1, 2, [3, [4]]];
-    let arr1 = flatten(arr);
-    console.log('arr1--',arr1);
-
+    console.log('------循环第一层for...in-----')
     function shallowCopy(obj1){
       var obj2 = Array.isArray(obj1)? [] : {};
       for(let i in obj1){
@@ -39,7 +25,7 @@
     obj2.a = 3;
     obj2.c.d = 4;
     console.log('obj1---',obj1);
-    console.log('obj2---',obj1);
+    console.log('obj2---',obj2);
     </script>
   </body>
 </html>

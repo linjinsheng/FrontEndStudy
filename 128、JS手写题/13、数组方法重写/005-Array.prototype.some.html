@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************Array.prototype.some******************')  
+     Array.prototype.mySome = function(cb) {
+        var _this = this;
+        var _len = _this.length;
+        var _arg2 = arguments[1] || window;
+        for(var i = 0; i < _len; i++){
+          if(cb.call(_arg2, _this[i], i, _this)){
+            return true;
+          }
+        }
+        return false;
+     }
+
+     let arr = [44, 12, 3, 7, 10, 6];
+     let arr2 = arr.mySome(item => item % 2 === 0);
+     console.log(arr2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************Array.prototype.myFilter******************')  
+     Array.prototype.myFilter = function(cb) {
+        var _this = this;
+        var _args = arguments[1] || window;
+        var _len = _this.length;
+        var res = [];
+        for(var i = 0; i < _len; i++){
+          cb.call(_args, _this[i], i, _this) ? res.push(_this[i]) : null;
+        }
+        return res;
+     }
+
+     let arr = [65, 44, 12, 4, 7, 10, 6];
+     let arr2 = arr.myFilter(item => item % 2 === 0);
+     console.log(arr2);
+    </script>
+  </body>
+</html>

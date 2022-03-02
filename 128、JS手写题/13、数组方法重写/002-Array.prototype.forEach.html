@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************Array.prototype.forEach******************')  
+     Array.prototype.myForeach = function(cb) {
+        var _arr = this;
+        var _arg2 = arguments[1] || window;
+        for(var i = 0; i < _arr.length; i++){
+          cb.call(_arg2, _arr[i], i, _arr);
+        }
+     }
+
+     let arr = [65, 44, 12, 4];
+     arr.myForeach((item, i)=>{
+       console.log(item, i);
+     })
+    </script>
+  </body>
+</html>

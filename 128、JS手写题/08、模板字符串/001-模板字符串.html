@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>事件总线</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------模板字符串-----')
+    function render(template, data) {
+      const reg = /\{\{(\w+)\}\}/;  //  模板字符串的正则
+      if(reg.test(template)){
+        console.log(reg.exec(template));
+        const name = reg.exec(template)[1];   //  查找当前模板第一个模板字符串的字段
+        template = template.replace(reg, data[name]); //  将第一个模板字符串渲染
+        return render(template, data);
+      }
+      return template;  //  如果模板没有模板字符串
+    }
+    let template = `我是{{name}}, 年龄{{age}}, 性别{{sex}}`;
+    let person = {
+      name: 'black',
+      age: 21,
+      sex: '男'
+    }
+    console.log(render(template, person));
+    </script>
+  </body>
+</html>

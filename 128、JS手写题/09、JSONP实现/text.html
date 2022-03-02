@@ -1,0 +1,34 @@
+html>
+<head>
+    <title>手写jsonp</title>
+    <script src="https://www.sammh.com/js/jquery.js"></script>
+</head>
+<body>
+    <input id="btn" type="button" value="jsonp" />
+    <textarea id="text" style="width: 400px; height: 100px;"></textarea>
+    <script>
+        (function (window) {
+        //使用立即执行函数不影响全局变量
+        var jsonp = function (url,callback) {
+            var FuncName = 'handeler' + Math.random().toString().replace('.','');
+            var parameter = '?jsoncallback=' + FuncName;
+            var scriptEle = document.createElement('script');
+            scriptEle.src = url + parameter;
+            window[FuncName] = function (data) {//将随机函数名定义在window上
+                callback(data);
+                document.body.removeChild(scriptEle);
+            }
+            document.body.appendChild(scriptEle);//添加到页面中，马上调用随机函数
+        }
+        //添加到window对象上
+        window.jsonp = jsonp;
+        })(window);
+        $("#btn").click(function () {
+            jsonp("https://www.sammh.com/jsonp.aspx", function (data) {
+                var result = JSON.stringify(data); //json对象转成字符串
+                $("#text").val(result);
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************Array.prototype.map******************')  
+    /**
+     * 1、看作是队列操作
+     * 2、新建一个队列,不断从原来的数组中拿元素,计算后放入新队列中
+     * 3、返回新队列
+     */  
+    // 链接地址
+    //  https://blog.csdn.net/qq_38211443/article/details/122214810?spm=1001.2101.3001.6650.9&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-9.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-9.pc_relevant_default&utm_relevant_index=10
+    Array.prototype.myMap = function (cb) {
+      var _this = this;
+      var _len = _this.length;
+      var _args = arguments[1] || window;
+      var res = [];
+      for (var i = 0; i < _len; i++) {
+          res.push(cb.call(_args, _this[i], i, _this));
+      }
+      return res;
+    }
+
+     let numbers = [65, 44, 12, 4];
+     let result = numbers.myMap((num, index) => {
+       console.log(index);
+       return num * 10;
+     });
+     console.log(result);
+    </script>
+  </body>
+</html>
