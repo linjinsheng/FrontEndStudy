@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------arguments的应用-----')
+    function sum(){
+      //  1、变量
+      var value = 0;
+      //  2、遍历
+      for(var i = 0; i < arguments.length; i++){
+        value += arguments[i];
+      }
+      console.log(value);
+    }
+    sum(10, 20, 30);
+    </script>
+  </body>
+</html>

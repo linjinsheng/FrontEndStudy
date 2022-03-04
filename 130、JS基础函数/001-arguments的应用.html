@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------arguments的应用-----')
+    function sum(num1, num2) {
+      console.log(arguments.length);
+      console.log(sum.length);
+      //  比较形参和实参的个数是否相等
+      console.log(arguments.length === sum.length);
+      console.log(arguments.callee);
+    }
+    sum(100, 200, 300);
+    </script>
+  </body>
+</html>
