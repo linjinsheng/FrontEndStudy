@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    // var array = [10, 20, 30];
+     var array = null;
+    try {
+      document.write(array[0]);
+    } catch(err) {
+      document.writeln("Error name: " + err.name + "");
+      document.writeln("Error message: " + err.message);
+    }
+    finally{
+      alert("object is null");
+    }
+    console.log("aaa");
+// 程序执行过程
+// 1. array[0]的时候由于没有创建array数组,array是个空对象，程序中调用array[0]就会产生object is null的异常 
+// 2. catch(err)语句捕获到这个异常通过err.name打印了错误类型,err.message打印了错误的详细信息. 
+// 3. finally类似于java的finally,无论有无异常都会执行.
+      
+      
+    </script>
+  </body>
+</html>
