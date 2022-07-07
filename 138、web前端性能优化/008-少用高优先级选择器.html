@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div class="color-green helloBoy">你好啊</div>
+    <script>
+    console.log('*************少用高优先级选择器******************')
+    document.querySelector('.helloBoy').addEventListener('click', function(e){
+      console.log(e.target.innerHTML)
+    }) 
+    </script>
+  </body>
+</html>

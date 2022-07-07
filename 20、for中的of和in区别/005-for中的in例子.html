@@ -19,6 +19,20 @@
       for(var item of arr){	
           console.log(item);
       }
+
+      class Point {
+        constructor(x, y) {
+          this.x = x;//this指当前实例
+          this.y = y;
+        }
+      
+        toString() {
+          return '(' + this.x + ', ' + this.y + ')';
+        }
+      }
+
+      let p1 = new Point(10, 20);
+      console.log(p1.toString());
     </script>
   </body>
 </html>

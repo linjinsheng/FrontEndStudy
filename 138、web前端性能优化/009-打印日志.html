@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>打印日志</title>
+  </head>
+  <body>
+    <script>
+    console.log('*************打印日志******************')
+    console.log('hello world!')
+    console.info('你好啊')
+    console.error('类型错误')
+    console.warn('警告警告')
+    var obj = {
+      'name' : 'dorsey',
+      'age' : 25,
+      'sex' : 'man'
+    }
+    console.table(obj)
+    //  计时器——time, timeEnd
+    console.time('计时器1')
+    for(var i = 0; i < 100; i++){
+      for(var j = 0 ;j < 100; j++){
+
+      }
+    }
+    console.timeEnd('计时器1')
+    function fn3(a) {
+      console.trace();
+      return a;
+    }
+    function fn2(a) {
+      return fn1(a);
+    }
+    function fn1(a) {
+      return fn3(a);
+    }
+    var a = fn2('123')
+    class getNums {
+      constructor(min, max) {
+        this.map = {};
+        this.res = [];
+        this.index = 1;
+        this.run(min, max);
+      }
+      init(min, max) {
+        let random = this.createRandom(min, max);
+        'undefined' === typeof this.map[random] && (this.res.push(random), 
+        this.map[random] = this.index ++);
+      }
+      createRandom(min, max) {
+        return Math.floor(Math.random()*(max-min) + min); 
+      }
+      run(min, max) {
+        while (this.res.length < 10) {
+          this.init(min, max);
+        }
+        console.log('this.res = ');
+        console.log(this.res);
+        console.log('===================')
+        this.res.sort((a, b) => a - b);
+      }
+    }
+    let res = new getNums(10, 100).res;
+    console.log('res的输出结果是: ')
+    console.log(res)
+    </script>
+  </body>
+</html>

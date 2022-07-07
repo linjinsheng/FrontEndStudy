@@ -10,9 +10,9 @@
     <script>
     console.log('*******************************')
     var arr = [1, 6, 8, 3, 4, 4, 5, 3, 7, 1];
-    function unique(arr){
-      return arr.filter(function (item, index){
-        return arr.indexOf(item, 0) === index
+    function unique(arr) {
+      return arr.filter(function(item, index){
+        return arr.indexOf(item, 0) === index;
       })
     }
     console.log(unique(arr));

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class类别</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------微信内置验证手机跳小程序-----')
+    /**
+      1、技术栈: web端、微信内置浏览器、小程序、移动端(ios\android)
+      2、功能: 点击按钮触发调起小程序
+      3、技术难点
+      1)、sdk加载: jweixin-1.6.0.js
+      
+      2)、标签渲染
+        const openEl = renderOpenEl(tag, options)
+        const templateEl = document.createElement('script')
+        templateEl.type = 'text/wxtag-template'
+        const openElChild = document.createElement('div')
+        openElChild.id = `wx-${new Date().getTime()}`
+      
+      3)、内容占位
+        openElChild.innerHTML = '打开小程序'
+        let elementHeight = clickBtn.clientHeight
+        let elementWidth = clickBtn.clientWidth
+        openElChild.style.width = elementWidth + 'px'
+        openElChild.style.height = elementHeight + 'px'
+        openElChild.style.opacity = '0'
+        templateEl.appendChild(openElChild)
+        openEl.appendChild(templateEl)
+        parentEl.appendChild(openEl)
+
+      4)、动态绑定回调
+        launch && openEl.addEventListener('launch', launch)
+        error && openEl.addEventListener('error', error)
+        clickBtn.appendChild(parentEl)
+
+      5)、埋点事件跟踪
+
+      6)、事件回调触发
+        renderWechatMiniPro(clickBtn, targetEl, {
+          'username': atob('Z2hfYzkwYjg4OGQ1Yzkz'),
+          'path': `/pages/navigate/navigate?url=${encodeURIComponent(`/pages/accountBindPhone/accountBindPhone?cb=back&type=clickForAuth&fileId=${fileId}&groupid=${groupid}&ftype=${ftype}&fname=${encodeURIComponent(fname)}&action=fileEdit`)}`,
+          'launch': (e) => {
+            callback && callback()
+            console.log('【kdocs log】clickToAuth OpenTag success', e)
+          },
+          'error': (e) => { 
+            console.log('【kdocs log】clickToAuth OpenTag err', e)
+          },
+        })
+
+        const clickBtn = this.$refs.bubbleBtn
+        setWechatConnection(clickBtn, fileInfo, clickBtn, () => {
+          onEvent('realname_miniprogram', {
+            action: 'show',
+            type: 'operation_verify',
+          })
+        })
+    */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .animate-box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        .animate-css3{
+            animation: myfirst 3s linear infinite;
+        }
+        @keyframes myfirst {
+            0% {transform: translate(0px);}
+            50% {transform: translate(300px);}
+            100% {transform: translate(0px);}
+        }
+    </style>
+</head>
+<body>
+    <div class="animate-box animate-css3"></div>
+</body>
+</html>

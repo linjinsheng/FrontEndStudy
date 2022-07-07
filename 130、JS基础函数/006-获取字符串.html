@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------获取参数-----')
+
+    
+    // if(hrefUrl.includes('?')){
+    //   console.log('包含?字符')
+    // }
+    // var temp1 = hrefUrl.split('?');
+    // var pram = temp1[1];
+    // if(pram.includes('&')){
+    //   console.log('包含&字符')
+    // }
+    // var keyValue = pram.split('&');
+    // var obj = {};
+    // for (var i = 0; i<keyValue.length; i++){
+    //     var item = keyValue[i].split('=');
+    //     var key = item[0];
+    //     var value = item[1];
+    //     obj[key] = value;
+    // }
+    // console.log(hrefUrl);
+    // console.log(temp1);    //  ['https://gitbook.cn/gitchat/geekbooks','tag=JavaScript&name=pwwu&age=24']
+    // console.log(pram);     //  tag=JavaScript&name=pwwu&age=24
+    // console.log(keyValue); //  ['tag=JavaScript','name=pwwu','age=24']
+    // console.log(obj);      //  {tag:'JavaScript',name:'pwwu',age:'24'}
+    // console.log(obj.day);
+
+    function getParams(path){
+      if (!path) {
+        return {}
+      }
+      let res = {}
+
+      let query = this.getQuery(path)
+
+      query = query.trim().replace(/^(\?|#|&)/, '')
+      if (query) {
+        query.split('&').forEach(function (param) {
+          var parts = param.replace(/\+/g, ' ').split('=')
+          var key = decodeURIComponent(parts.shift())
+          var val = parts.length > 0
+            ? decodeURIComponent(parts.join('='))
+            : null
+          if (res[key] === undefined) {
+            res[key] = val
+          } else if (Array.isArray(res[key])) {
+            res[key].push(val)
+          } else {
+            res[key] = [res[key], val]
+          }
+        })
+      }
+      return res
+    }
+
+    function getQuery(path){
+      if (!path) { return '' }
+      let query = ''
+      let queryIndex = path.indexOf('?')
+      if (queryIndex >= 0) {
+        query = path.slice(queryIndex + 1)
+      }
+      return query
+    }
+
+    let hrefUrl = 'https://gitbook.cn/gitchat/geekbooks?tag=JavaScript&name=pwwu&age=24';
+    let params = getParams(hrefUrl)
+    console.log('params---'+ JSON.stringify(params))
+    const {tag, name, age} = params
+    console.log('tag----'+tag)
+    console.log('name----'+name)
+    console.log('age----'+age)
+    let a = null
+    if(a){
+      console.log('里面a----'+a) 
+    }
+    console.log('外面a----'+a) 
+    </script>
+  </body>
+</html>

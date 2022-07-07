@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class类别</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------class类别-----')
+    //  https://blog.csdn.net/weixin_45865724/article/details/104327098
+    class myClass{
+      //构造器，默认为空的构造器
+      //当class在被new时就会调用构造器
+      //相当于function
+      //function myClass(name,age){
+      //	this.name=name
+      //	this.age=age
+      //}
+      constructor(name,age){
+        //这些都是实例属性
+        //只有实例才能访问
+        this.name=name
+        this.age=age
+      }
+    }
+
+    var i=new myClass('小明', 18)
+    console.log(i)
+
+    </script>
+  </body>
+</html>

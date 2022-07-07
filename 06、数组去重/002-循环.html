@@ -10,9 +10,9 @@
     <script>
     console.log('*******************************')
     var arr = [1, 6, 8, 3, 4, 4, 5, 3, 7, 1];
-    function unique(arr){
+    function unique(arr) {
       for(var i = 0, len = arr.length; i < len; i++){
-        for(var j= i+1, len = arr.length; j < len; j++) {
+        for(var j = i+1, len = arr.length; j < len; j++){
           if(arr[i] === arr[j]){
             arr.splice(j, 1);
             j--;

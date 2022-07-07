@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>上下左右居中1</title>
+    <style>
+    .a:hover { background-color: #f00; }
+    .a:hover~.b { background-color: #00f; }
+    .a:hover~.b.f { display: none; }
+    .c{
+        display:block
+    }
+    .d{
+        display:block
+    }
+    .a:hover .d{
+        color: royalblue;
+        display:none
+    }
+    </style>
+  </head>
+  <body>
+    <div class="a">aaa
+        <div class="c">
+            <div class="d">ddd</div>
+        cccc</div>
+
+    </div>
+    <div class="b">bbb
+        <div class="f">ffff</div>
+        </div>
+  </body>
+</html>

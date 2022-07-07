@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vue中的data为什么是函数</title>
+  </head>
+  <body>
+    <script>
+    console.log('*************vue中的data为什么是函数******************')
+    /**
+     * 一个vue组件就是一个vue实例
+     * 实例是通过构造函数来构建的,每个构造函数可以new出很多个实例,每个实例
+     * 都会继承原型上的方法和属性
+     * vue中的data数据是vue组件原型上的属性,数据存在内存当中
+     */ 
+
+     // 创建一个简单的构建函数
+     var MyComponent = function() {
+
+     }
+     // 原型链对象上设置data数据,里为object
+     MyComponent.prototype.data = {
+       name: 'abc',
+       age: 20
+     }
+     // 创建两个实例
+     var xiaoming = new MyComponent()
+     var xiaohong = new MyComponent()
+     // 默认情况下小明和小红的年龄一样
+     console.log(xiaoming.data.age === xiaohong.data.age)
+     // 改变一下小明的年龄
+     xiaoming.data.age = 30;
+     // 改变了小明的年龄,结果造成小红的年龄也改变了
+     // 小红和小明的data都引用的是同一个内存地址
+     console.log(xiaoming.data.age)
+     console.log(xiaohong.data.age)
+</script>
+  </body>
+</html>

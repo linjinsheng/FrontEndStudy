@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS行为层</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------JS行为层-----')
+    var map = {}
+    for(var i in document){
+      map[i] = document[i];
+    }
+    console.log(map)
+
+    var list = {}
+    for(var i in window){
+      list[i] = window[i];
+    }
+    console.log(list)
+
+    </script>
+  </body>
+</html>

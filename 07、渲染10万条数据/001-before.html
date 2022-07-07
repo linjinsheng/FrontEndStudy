@@ -24,13 +24,13 @@
       //  插入十万条数据
       const total = 100000;
       let ul = document.querySelector('ul');  //  拿到ul
-      function add() {
-        //  1、创建虚拟节点(使用createDocumentFrageMent不会触发渲染)
+      function add(){
+        //  1、创建虚拟节点,使用createDocumentFrageMent不会触发渲染
         const fragment = document.createDocumentFragment();
         //  2、循环十万次
         for(let i = 0; i < total; i++){
           const li = document.createElement('li');
-          li.innerText= Math.floor(Math.random() * total);
+          li.innerText = Math.floor(Math.random() * total);
           fragment.appendChild(li);
         }
         //  3、最后把虚拟节点append到ul上

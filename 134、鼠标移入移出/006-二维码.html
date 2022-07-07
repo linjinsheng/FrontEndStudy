@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .k-beginner-guide {
+        width: 270px;
+        height: 310px;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 12px 0px rgba(56, 56, 56, 0.2);
+        border-radius: 2px;
+        border: 1px solid #D3D3D3;
+      }
+      .box{
+        position: relative;
+        width: 16px;
+        height: 16px;
+        top: 16px;
+        right: 16px;
+        float: right;
+        overflow: hidden;
+      }
+      .close {
+          font-size: 0;
+        }
+      .close::before,
+      .close::after {
+          content: '';
+          width: 16px;
+          height: 1px;
+          display: block;
+          background-color: #909399;
+          position: absolute;
+          left: 0;
+          top: 50%;
+      }
+      .close::before {
+          transform: rotate(45deg);
+      }
+      .close::after {
+          background: #909399;
+          transform: rotate(-45deg);
+      }
+
+      .k-beginner-guide-title{
+        position: relative;
+        display: block;
+        margin-top: 20px;
+        width: 210px;
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #3D4757;
+        line-height: 20px;       
+        left:50%;                   
+        margin-left:-105px; 
+      }
+
+      .k-logo{
+        position: relative;
+        display: block;
+        margin-top: 16px;
+        width: 136px;
+        height: 136px;
+        background: rgba(255, 255, 255, 0.9);
+        left:50%;                   
+        margin-left:-68px; 
+      }
+
+      .k-beginner-guide-description{
+        position: relative;
+        left: 45px;
+        width: 181px;
+        height: 17px;
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #949AAE;
+        line-height: 17px;
+      }
+
+      .txt1{
+        margin-top: 16px;
+      }
+
+      .txt2{
+        margin-top: 8px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="k-beginner-guide">
+        <div class="box" onclick= "clickAction()">
+            <div class="close"></div>
+        </div>
+        <div style="clear:both;height:0px;"></div>
+        <div class="k-beginner-guide-title">分享至微信群，邀请好友一起填表</div>
+        <div class="k-logo"></div>
+        <div class="k-beginner-guide-description txt1">使用微信“扫一扫”，发送至微信群</div>
+        <div class="k-beginner-guide-description txt2">开始与好友一起填表</div>
+    </div>
+    <script>
+    function clickAction(){
+        var guide = document.getElementsByClassName("k-beginner-guide");
+        console.log('guide-----',guide[0])
+        guide[0].style.display='none';
+    }
+    console.log('*******************************')
+    </script>
+  </body>
+</html>

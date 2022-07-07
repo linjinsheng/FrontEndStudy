@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class类别</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------class类别-----')
+    class myClass{
+      //只有类才能访问
+      //实例无法访问
+      static staticFunction(){
+        console.log('这是myClass的静态方法')
+      }
+    }
+    myClass.staticFunction()
+
+    function myFunction(){}
+    myFunction.staticFunction=function(){
+      console.log('这是function中的静态方法')
+    }
+    //使用
+    myFunction.staticFunction()
+    </script>
+  </body>
+</html>

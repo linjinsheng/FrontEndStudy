@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class类别</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------class类别-----')
+    class myClass{
+      //只有new出来的实例才能访问
+      //类无法访问
+      aFunction(){
+        console.log('这是myClass的实例方法')
+      }
+    }
+
+    var i = new myClass()
+    i.aFunction()
+
+    function myFunction(){}
+    myFunction.prototype.aFunction=function(){
+      console.log('这是function中的实例方法')
+    }
+    //使用
+    var a = new myFunction()
+    a.aFunction()
+    </script>
+  </body>
+</html>

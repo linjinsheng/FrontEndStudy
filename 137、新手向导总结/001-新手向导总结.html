@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class类别</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------新手向导总结-----')
+    /**
+      1、技术栈: vue、小程序
+      2、功能: 弹窗插件
+      3、用途: WPS客户端、移动端
+      4、技术难点
+        1)、插件新增、过滤器配置
+        {
+          "WPSNovicGuidance": {
+            "filters": [
+              "UrlValues.Get(\"wps_et\") != \"\""
+            ]
+          },
+          "BubbleTips": {
+            "filters": [
+              "UrlValues.Get(\"wps_et\") == \"\""
+            ]
+          },
+          "OpenKdocsClient": {
+            "filters": [
+              "UrlValues.Get(\"wps_et\") == \"\""
+            ]
+          }
+        }
+        2)、组件创建和销毁
+        3)、父子组件数据传值
+        4)、css的bem命名规范
+        5)、css居中处理
+            &__box{
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+
+        6)、css的hover运用
+            &:hover {
+              background-image: url(../assets/close-blue.svg);
+            }
+
+        7)、Charles抓包工具的使用
+        8)、css样式画图、svg和cdn使用
+        9)、图片和文本对齐处理、居中处理操作
+            .wechat-green-img {
+              width: 24px;
+              height: 24px;
+              display: inline-block;
+              vertical-align: middle;
+            }
+            
+            span {
+              display: inline-block;
+              vertical-align: middle;
+              height: 20px;
+              line-height: 20px;
+            }
+       10)、埋点事件处理、数据解密
+       11)、图片加载失败处理
+             <img
+              v-if="showPicImg"
+              :src="imgUrl"
+              draggable="false"
+              :class="['img', {'img-hidden': !picLoaded}]"
+              @load="loadHandler"
+              @error="loadErrorHandler">
+            
+              loadHandler () {
+                this.loading = false
+                this.isLoadFinished = true
+              },
+
+              loadErrorHandler () {
+                this.loading = false
+                this.isLoadError = true
+                document.querySelector('.viewer-canvas').style.display = 'none'
+                this.messageError = this.$message.error({
+                  message: this.$t('views_content_Image8'),
+                  duration: 10000,
+                })
+              },
+       12)、小程序码的解析和获取scene不能超过32个字符
+
+       13)、小程序扫码(不用发体验版)
+        isDev: __wxConfig && (__wxConfig.envVersion === 'develop' || __wxConfig.envVersion === 'trial'),
+      
+        tapScan () {
+          wx.scanCode({
+            onlyFromCamera: true,
+            success (res) {
+              if (res.scanType === 'WX_CODE') {
+                let url = res.path
+                if (!/^\//.test(url)) {
+                  url = '/' + url
+                }
+                wx.reLaunch({
+                  url
+                })
+              } else {
+                wx.showToast({
+                  title: '扫码失败，请重试'
+                })
+              }
+            }
+          })
+        },
+        <image wx:if="{{ isDev }}" class="com-header-bar-action-img" src="{{ cdn }}/kdocs/wxminiprogram/icon/scan.svg" bindtap='tapScan' />
+    */
+    </script>
+  </body>
+</html>

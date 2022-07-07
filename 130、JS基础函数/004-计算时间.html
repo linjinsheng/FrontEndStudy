@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------arguments的应用-----')
+    function sum(){
+      //  1、变量
+      var value = 0;
+      //  2、遍历
+      for(var i = 0; i < arguments.length; i++){
+        value += arguments[i];
+      }
+      console.log(value);
+    }
+
+    function getUrlParms(str){
+        var index = str.lastIndexOf("/");
+          str  = str.substring(index + 1, str.indexOf("?"));
+          return str;
+    }
+    sum(10, 20, 30);
+
+    let url = 'https://www.kdocs.cn/l/cvFYytErYBG4?from=docs&wps_et=1&debug'
+    // let reg =/([^?&+#]+)=([^?&+#]+)/g;
+    // let obj={};
+    // let href = 'http://www.runoob.com/jquery/misc-trim.html?channelid=12333&name=xiaoming&age=23';
+    // href.replace(reg,($0,$1,$2)=>obj[$1]=$2)
+    // console.log(obj);
+    let str = getUrlParms(url)
+    console.log(str);
+
+    var hrefUrl = 'https://gitbook.cn/gitchat/geekbooks?tag=JavaScript&name=pwwu&age=24';
+    if(hrefUrl.includes('?')){
+      console.log('包含?字符')
+    }
+    var temp1 = hrefUrl.split('?');
+    var pram = temp1[1];
+    if(pram.includes('&')){
+      console.log('包含&字符')
+    }
+    var keyValue = pram.split('&');
+    var obj = {};
+    for (var i = 0; i<keyValue.length; i++){
+        var item = keyValue[i].split('=');
+        var key = item[0];
+        var value = item[1];
+        obj[key] = value;
+    }
+    console.log(hrefUrl);
+    console.log(temp1);    //  ['https://gitbook.cn/gitchat/geekbooks','tag=JavaScript&name=pwwu&age=24']
+    console.log(pram);     //  tag=JavaScript&name=pwwu&age=24
+    console.log(keyValue); //  ['tag=JavaScript','name=pwwu','age=24']
+    console.log(obj);      //  {tag:'JavaScript',name:'pwwu',age:'24'}
+    console.log(obj.day);
+
+
+
+
+    </script>
+  </body>
+</html>

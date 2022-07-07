@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js鼠标移入移除显现与隐藏</title>
+<script>
+function m_over() {
+//获取div里面名为"qq"的id鼠标移入时将其显现
+var qq = document.getElementById('qq');
+qq.style.display = "block";
+qq.style.backgroundColor = "red";
+}
+//获取div里面名为"qq"的鼠标移除是将其隐藏
+function m_out() {
+var qq =document.getElementById('qq');
+qq.style.display = "none";
+
+}
+</script>
+</head>
+<body>
+<div onmouseover="m_over(this)" onmouseout="m_out(this)">显示部分
+</div>
+<div id="qq" style="display:none" >
+<b>隐藏部分</b>
+</div>
+</body>
+</html>

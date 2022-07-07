@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>订阅发布者</title>
+  </head>
+  <body>
+    <script>
+    console.log('*************订阅发布者******************')
+    function observer (){
+      this.observerList = [];
+    }
+    observer.prototype = {
+      //  添加订阅者
+      add(key) {
+        this.observerList.push(key);
+      },
+      //  移除订阅者
+      remove(key) {
+        return this.observerList.filter(item => item != key);
+      },
+      //  通知订阅者
+      update (data) {
+        this.observerList.forEach(item => {
+          item(data);
+        });
+      }  
+    }
+    let sub0 = function(data) {
+      console.log('我是sub0, 已经收到数据更新的消息了,数据已变成: '+data);
+    }
+    let sub1 = function(data) {
+      console.log('我是sub1, 已经收到数据更新的消息了,数据已变成: '+data);
+    }
+    var o = new observer;
+    o.add(sub0);
+    o.add(sub1);
+    o.update('hello world');
+    o.update('data is change');
+    o.update('data is change again');
+    </script>
+  </body>
+</html>

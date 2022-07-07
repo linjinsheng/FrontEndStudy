@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .rhomboid{
+            width: 70px;
+            font-size: 20px;
+            color: #fff;
+            background-color: rgb(61, 140, 232);
+            margin-left: 60px;
+            text-align: center;
+            line-height: 50px;
+            position: relative;
+        }
+        .rhomboid::after{
+            content: '';
+            position: absolute;
+            border-top: 50px solid rgb(61, 140, 232);
+            border-right: 25px solid transparent;
+            top: 0;
+            right: -25px;
+            clear: both;
+        }
+        .rhomboid::before{
+            content: '';
+            position: absolute;
+            border-bottom: 50px solid rgb(61, 140, 232);
+            border-left: 25px solid transparent;
+            left: -25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="rhomboid">你好哇</div>
+</body>
+</html>

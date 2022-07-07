@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据额类型检测方法</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------获取参数-----')
+
+    
+    // if(hrefUrl.includes('?')){
+    //   console.log('包含?字符')
+    // }
+    // var temp1 = hrefUrl.split('?');
+    // var pram = temp1[1];
+    // if(pram.includes('&')){
+    //   console.log('包含&字符')
+    // }
+    // var keyValue = pram.split('&');
+    // var obj = {};
+    // for (var i = 0; i<keyValue.length; i++){
+    //     var item = keyValue[i].split('=');
+    //     var key = item[0];
+    //     var value = item[1];
+    //     obj[key] = value;
+    // }
+    // console.log(hrefUrl);
+    // console.log(temp1);    //  ['https://gitbook.cn/gitchat/geekbooks','tag=JavaScript&name=pwwu&age=24']
+    // console.log(pram);     //  tag=JavaScript&name=pwwu&age=24
+    // console.log(keyValue); //  ['tag=JavaScript','name=pwwu','age=24']
+    // console.log(obj);      //  {tag:'JavaScript',name:'pwwu',age:'24'}
+    // console.log(obj.day);
+
+    function getSourceType(url){
+      console.log('进入----1')
+      let sourceType = ''
+      let temp1 = ''
+      let keyValue = ''
+      let obj = {}
+      console.log('进入----2')
+      if(!url.includes('?'))return sourceType
+      console.log('进入----3')
+      temp1= url.split('?');
+      console.log('进入----4')
+      var pram = temp1[1];
+      console.log('进入----pram'+pram)
+      if(pram.includes('&')){
+        console.log('包含&')
+          keyValue = pram.split('&');
+      }else{
+          keyValue = pram
+      }
+      console.log('进入----keyValue--'+keyValue)
+      console.log('进入----keyValue的长度--'+ keyValue.length)
+      for (var i = 0; i < keyValue.length; i++){
+        var item = keyValue[i].split('=');
+        var key = item[0];
+        var value = item[1];
+        obj[key] = value;
+        console.log('进入obj----'+JSON.stringify(obj))
+      }
+      
+      if(obj.tag !== undefined){
+        sourceType = obj.tag
+      }
+      return sourceType;
+    }
+
+    let hrefUrl = 'https://gitbook.cn/gitchat/geekbooks?tag=JavaScript&name=pwwu';
+    let sourType = getSourceType(hrefUrl)
+    console.log('sourType---'+sourType)
+
+
+
+    </script>
+  </body>
+</html>

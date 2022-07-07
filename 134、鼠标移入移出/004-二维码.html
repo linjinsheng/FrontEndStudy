@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .k-beginner-guide {
+        width: 270px;
+        height: 310px;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 12px 0px rgba(56, 56, 56, 0.2);
+        border-radius: 2px;
+        border: 1px solid #D3D3D3;
+      }
+
+      /* .close{
+        position: relative;
+        width: 18px;
+        height: 18px;
+        top: 18px;
+        right: 18px;
+        background: red;
+        float: right
+      } */
+
+      .box{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        top: 18px;
+        right: 18px;
+        background: red;
+        float: right
+      }
+      .close {
+            font-size: 0;
+        }
+    .close::before,
+    .close::after {
+        content: '';
+        width: 50px;
+        height: 1px;
+        /* 伪元素before和after添加的内容默认是 inline 元素 */
+        /* inline内容有多大，它就有多大，不能设置宽和高 */
+        /* 必须显示为block */
+        display: block;
+        background-color: #909399;
+        position: absolute;
+        left: 0;
+        top: 50%;
+    }
+    .close::before {
+        transform: rotate(45deg);
+    }
+    .close::after {
+        background: #909399;
+        transform: rotate(-45deg);
+    }
+    </style>
+  </head>
+  <body>
+    <div class="k-beginner-guide">
+        <div class="box">
+            <div class="close" onclick= "clickAction()" >
+        </div>
+        </div>
+    </div>
+    <script>
+    function clickAction(){
+        var guide = document.getElementsByClassName("k-beginner-guide");
+        console.log('guide-----',guide[0])
+        guide[0].style.display='none';
+    }
+    console.log('*******************************')
+
+
+    //  参考资料 https://blog.csdn.net/qq_44184794/article/details/106872008
+    </script>
+  </body>
+</html>
