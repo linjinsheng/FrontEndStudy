@@ -12,6 +12,10 @@
 
         <script type="text/javascript">
         // 补全代码
+        /*
+        1、target表示当前触发事件的元素
+        2、currenTarget是绑定处理函数的元素
+        */
         document.querySelector('ul').onclick = function(e) {
           e.target.innerText += '.'
         }
