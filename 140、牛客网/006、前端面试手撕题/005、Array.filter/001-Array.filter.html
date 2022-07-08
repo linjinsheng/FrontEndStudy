@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************实现Array.filter******************')
+    /**
+     * 
+      1、判断参数是否为函数，如果不是则直接返回
+      2、创建一个空数组用于承载新的内容
+      3、循环遍历数组中的每个值，分别调用函数参数，将满足判断条件的元素添加进空数组中
+      4、返回新的数组
+    */
+    Array.prototype._filter = function(fn){
+        if(typeof fn !== 'function')return;
+        let array = this;
+        let len = array.length;
+        let newArray = [];
+        for(let i = 0; i < len; i++){
+          const result = fn.call(arguments[1], array[i], i, array);
+          result && newArray.push(array[i]);
+        }
+        return newArray;
+    }
+    let arr = [65, 44, 12, 4, 7, 10, 6];
+    let arr2 = arr._filter(item => item % 2 === 0);
+    console.log(arr2);         
+    </script>
+  </body>
+</html>

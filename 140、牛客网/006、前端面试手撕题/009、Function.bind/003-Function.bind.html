@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bind</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------Bind-----')
+    /**
+     * 
+      1、创建一个新this用来保存旧的this对象
+      2、返回一个匿名函数，该匿名函数返回通过apply修改了指针指向的函数运算结果
+     */
+    Function.prototype._bind = function(target, ...arguments1) {
+        const _this = this
+        return function(...arguments2) {
+            return _this.apply(target,arguments1.concat(arguments2))
+        }
+    }
+    var name = "zhangsan";
+    var obj = {
+      name: "lisi",
+      getName: function(...arg){
+        console.log(this.name, ...arg);
+      }
+    };
+    obj.getName._bind(obj, '年龄22')('体重120');
+    </script>
+  </body>
+</html>
