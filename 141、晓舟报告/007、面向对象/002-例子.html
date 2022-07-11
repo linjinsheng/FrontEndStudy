@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+      class User {
+        //  构造函数
+        constructor(username, password){
+          this.username = username;
+          this.password = password;
+        }
+        login(){
+          if(this.username === "xiaoming" && this.password === "123456"){
+            console.log("登陆成功!")
+          } else {
+            console.log("登陆失败!")
+          }
+        }
+      }
+
+      let user = new User("xiaoming", "123456");
+      console.log(user);    //  {username: 'xiaoming', password: '123456'}
+      user.login();         //  登陆成功!
+
+      class Admin extends User {
+        constructor(username, password, id){
+          super(username, password);
+          this.id = id;
+        }
+          crudUser(){
+            console.log("对用户进行操作!")
+          }
+      }
+      let admin = new Admin("xiaohong", "1234567", "007");
+      console.log(admin);   //  {username: 'xiaohong', password: '1234567', id: '007'}
+      admin.login();        //  登陆失败!
+      admin.crudUser();     //  对用户进行操作!
+    </script>
+  </body>
+</html>
