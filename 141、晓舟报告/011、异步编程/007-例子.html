@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+    let promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let flag = false;
+        if(flag){
+          resolve("奶茶");
+        }else{
+          resolve("获取奶茶失败");
+        }
+      }, 2000)
+    })
+
+    promise.then((data) => {
+      console.log(data);
+    }).catch(err => {
+      console.log(err);
+    })
+    </script>
+  </body>
+</html>

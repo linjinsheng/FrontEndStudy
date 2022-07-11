@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+    function getTea(fn){
+      setTimeout(() => {
+        fn("奶茶");
+      }, 2000);
+    }
+
+    getTea(function(data){
+      console.log(data);
+    })
+    </script>
+  </body>
+</html>
