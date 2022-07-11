@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    let stu = {
+      name: "xiaoming",
+      age: 10,
+      bestFriend:{
+        name: "xiaohua",
+        age: 20, 
+      }
+    }
+    for(let i in stu){
+      console.log(stu[i]);
+    }
+
+    function deepCopyObject(obj){
+      let newObj = {};
+      for(let i in obj){
+        if(obj[i] instanceof Object){
+          newObj[i] = deepCopyObject(obj[i]);
+        } else {
+          newObj[i] = obj[i];
+        }
+      }
+      return newObj;
+    }
+
+    let newStu = deepCopyObject(stu);
+    stu.bestFriend.name = "xiaofen";
+    console.log(stu);      
+    console.log(newStu);
+    </script>
+  </body>
+</html>

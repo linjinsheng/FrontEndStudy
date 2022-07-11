@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    let stu = {
+      name: "xiaoming",
+      age: 10
+    }
+    for(let i in stu){
+      console.log(stu[i]);
+    }
+
+    function copyObject(obj){
+      let newObj = {};
+      for(let i in obj){
+        newObj[i] = obj[i];
+      }
+      return newObj;
+    }
+
+    let newStu = copyObject(stu);
+    stu.age = 20;
+    console.log(stu);         //  {name: 'xiaoming', age: 20}
+    console.log(newStu);      //  {name: 'xiaoming', age: 10}
+    </script>
+  </body>
+</html>
