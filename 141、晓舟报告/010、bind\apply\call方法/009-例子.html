@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+    function User(){
+      this.crudContent = function(){
+        console.log('增删改查内容')
+      }
+    }
+    function Person(){
+      this.login = function(){
+        console.log('登录成功')
+      }
+    }
+    function Admin(){
+      User.bind(this)();
+      Person.bind(this)();
+    }
+    let admin = new Admin();
+    admin.crudContent();    //  增删改查内容
+    admin.login();          //  登录成功
+    </script>
+  </body>
+</html>

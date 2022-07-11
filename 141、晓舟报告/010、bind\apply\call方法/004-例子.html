@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+    function User(){
+      this.crudContent = function(){
+        console.log('增删改查内容')
+      }
+    }
+    function Admin(){
+      User.call(this);
+    }
+    let admin = new Admin();
+    admin.crudContent();    //  增删改查内容
+    </script>
+  </body>
+</html>
