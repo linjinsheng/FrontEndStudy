@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    //  原始类型赋值
+    let str1 = "hello";
+    let str2 = str1;
+    str1 = "world";
+    console.log(str1);  // hello
+    console.log(str2);  // world
+
+    //  引用类型赋值
+    let stu1 = {name: "xiaoming"};
+    let stu2 = stu1;
+    stu1.name = "xiaohong";
+    console.log(stu1.name);  // xiaohong
+    console.log(stu2.name);  // xiaohong
+    </script>
+  </body>
+</html>

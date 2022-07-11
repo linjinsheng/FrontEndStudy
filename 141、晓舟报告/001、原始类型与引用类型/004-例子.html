@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    //  原始类型传参
+    function fun(num){
+      num = 100;
+    }
+    let n = 10;
+    fun(n);
+    console.log(n);   // 10
+
+    //  引用类型传参
+    function funArr(arr){
+      arr.push(10);
+    }
+    let a = [1, 2, 3];
+    funArr(a);
+    console.log(a);   //  [1, 2, 3, 10]
+    </script>
+  </body>
+</html>
