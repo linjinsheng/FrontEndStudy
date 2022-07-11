@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+    Function.prototype.toString = function(){
+      return "我重新定义了函数的toString";
+    }
+    function fun(){
+      console.log("123456");
+    }
+    alert(fun);
+    </script> 
+  </body>
+</html>

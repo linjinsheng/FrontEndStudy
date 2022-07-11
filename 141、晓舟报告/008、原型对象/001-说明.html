@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /**
+      原型对象(prototype)
+      1、原型对象是一个对象,所有对象都会从原型对象上继承属性和方法;
+      2、可以使用构造函数(类)的prototype属性,或对象的__proto__属性获取到它;
+
+      原型链
+      1、每个对象都有一个原型,这个原型可以有他自己的原型;
+      2、依此类推,形成一个原型链.
+      3、查定特定属性的时候,先去这个对象里去找;如果没有的话,就到它的原型对象里面找;
+      如果还是没有的话,到原型对象的原型对象里面去找.
+
+      Object对象的原型
+      1、所有原型链的终点都是Object.prototype
+      2、主要在Object对象的原型上添加属性或方法,所有对象都可以使用
+
+      内置对象的方法是通过原型对象定义的:
+      1、Array: push、join
+      2、Date: getMinites, getHours
+      3、Function: call、 apply、bind
+      4、Object: toString
+    */
+    </script>
+  </body>
+</html>
