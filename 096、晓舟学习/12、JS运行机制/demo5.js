@@ -12,3 +12,8 @@ async function fun(){
   console.log(b);
 }
 fun();
+
+/**
+ 1
+ 2
+ */
