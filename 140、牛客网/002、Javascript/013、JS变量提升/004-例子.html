@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+        // js预解析: 就是js代码执行之前做的检查
+        //  1、变量名提升: 只提升声明,不提升赋值
+        //  2、函数提升: 整个函数提升.
+        //  3、var定义的变量,可以在定义前访问(而不报异常),称为变量的提升(相当于将这个变量的声明提升到当前作用域的最顶端)
+
+        var b = 10;
+        //  var z;
+        {
+          console.log(b);   // 10
+          var b = 8;
+        }
+
+        {
+          console.log(z);   // undefined
+          //  提升到顶级域
+          var z = 8;
+        }
+
+    </script>
+  </body>
+</html>
+
+

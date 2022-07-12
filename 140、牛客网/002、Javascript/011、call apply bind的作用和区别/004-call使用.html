@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+
+      console.log('------call()方法----')
+      //  call方法第一个参数是要绑定给this的值，后面传入的是参数列表。
+      //  当第一个参数为null、undefined时，默认指向window。
+      var obj = {
+        name: 'andy'
+      }
+      function fn(a, b) {
+          console.log(this);              //此时this指向obj
+          console.log(a + b);
+      }
+      fn.call(obj, 10, 20);               //30
+
+      //  判断变量类型
+      function isArray(obj){
+          return Object.prototype.toString.call(obj) == '[object Array]';
+      }
+      console.log(isArray([])) // true
+      console.log(isArray('dot')) // false
+
+
+      //  应用场景：经常做继承
+      function Father(username, age) {
+      this.username = username;
+        this.age = age
+      }
+      function Son(username, age, sex) {
+          // 调用father函数，并将father中的this改成son中的this
+          Father.call(this, username, age);
+          this.sex = sex;
+      }
+      var p1 = new Son('刘德华', 20, '男');
+      console.log(p1);                     //{username: "刘德华", age: 20, sex: "男"}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    var arr = [1, 6, 8, 3, 4, 4, 5, 3, 7, 1];
+    function unique(arr) {
+      return arr.filter(function(item, index){
+        return arr.indexOf(item, 0) === index;
+      })
+    }
+    console.log(unique(arr));
+    var pArray = 10;
+    console.log(pArray);
+    var a1 = 10, a2 = 20;
+    alert("a1+a2="+a1+a2);
+    </script>
+  </body>
+</html>
