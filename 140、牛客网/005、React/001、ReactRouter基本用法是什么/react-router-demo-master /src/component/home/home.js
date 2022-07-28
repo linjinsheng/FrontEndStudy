@@ -52,6 +52,12 @@ class Home extends Component {
             <Link to={'/part3/' + this.state.param}>前往part3-传字符串</Link>
             <input onChange={e => this.setState({param: e.target.value})} type="text"/>
           </li>
+          <li>
+            <Link to={'/async'}>前往async</Link>
+          </li>
+          <li>
+            <Link to={'/sync'}>前往sync</Link>
+          </li>
         </ul>
       </div>
     );
