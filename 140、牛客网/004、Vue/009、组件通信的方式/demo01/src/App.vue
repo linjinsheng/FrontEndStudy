@@ -18,6 +18,8 @@
     <div></div>
     ----------------------------------------------
     <next-tick></next-tick>
+    ----------------------------------------------
+    <computed-and-watch></computed-and-watch>
   </div>
   </div>
 </template>
@@ -30,9 +32,10 @@ import additionNumCom from './components/AdditionNum.vue'
 import comAv from './components/ComAv.vue'
 import comB from './components/ComB.vue'
 import nextTick from './components/NextTick.vue'
+import computedAndWatch from './components/ComputedAndWatch.vue'
 export default {
   name: 'ComArticle',
-  components: { comArticle, sonArticle, showNumCom, additionNumCom, comAv, comB, nextTick },
+  components: { comArticle, sonArticle, showNumCom, additionNumCom, comAv, comB, nextTick, computedAndWatch },
   data() {
     return {
       articleList: ['红楼梦', '西游记', '三国演义'],
