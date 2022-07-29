@@ -15,6 +15,9 @@
     <div>{{msg}}</div>
     <com-b></com-b>
     <button @click="changeB">点击改变子组件值</button>
+    <div></div>
+    ----------------------------------------------
+    <next-tick></next-tick>
   </div>
   </div>
 </template>
@@ -26,9 +29,10 @@ import showNumCom from './components/ShowNum.vue'
 import additionNumCom from './components/AdditionNum.vue'
 import comAv from './components/ComAv.vue'
 import comB from './components/ComB.vue'
+import nextTick from './components/NextTick.vue'
 export default {
   name: 'ComArticle',
-  components: { comArticle, sonArticle, showNumCom, additionNumCom, comAv, comB },
+  components: { comArticle, sonArticle, showNumCom, additionNumCom, comAv, comB, nextTick },
   data() {
     return {
       articleList: ['红楼梦', '西游记', '三国演义'],
