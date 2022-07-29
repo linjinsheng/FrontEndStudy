@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /*
+      keep-alive 是什么?
+      内置组件,能在组件切换过程中将状态保留在内存中,防止重复渲染dom
+      kepp-alive不会在dom树中渲染
+      
+      使用场景:几乎和渲染有关系
+      
+      多两个生命周期:activated、deactivated;同时,beforeDestroy和detroyed就不会再被触发了,因为组件不会被真正销毁.
+      当组件被换掉时,会被缓存到内存中,触发deactivated生命周期;当组件切换回来时,
+      再去缓存里找到这个组件、触发activated钩子函数.
+    */ 
+    
+    /**
+     * 
+      <keep-alive>
+      作用：缓存组件，提升性能，避免重复加载一些不需要经常变动且内容较多的组件。
+      
+      <keep-alive>的使用方法：
+      使用<keep-alive>`标签对需要缓存的组件进行包裹，默认情况下被<keep-alive>标签包裹的组件都会进行缓存，
+      区分被包裹的组件是否缓存有两种方法，
+      第一种是给keepalive添加属性，组件名称指的是具体组件添加的name，不是路由里面的name。
+      include 包含的组件(可以为字符串，数组，以及正则表达式,只有匹配的组件会被缓存)。
+      exclude 排除的组件(以为字符串，数组，以及正则表达式,任何匹配的组件都不会被缓存)。
+      第二种也是最常用的一种是，和路由配合使用：在路由中添加meta属性。 
+      
+      使用keepalive导致组件不重新加载，也就不会重新执行生命周期的函数，
+      如果要解决这个问题，就需要两个属性进入时触发：activated 退出时触发：deactivated 
+     */
+
+    </script>
+  </body>
+</html>

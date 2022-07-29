@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    // vue-router实现懒加载的方法有两种： 
+    // ES6的impot方式:              component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'), 
+    // VUE中的异步组件进行懒加载方式:  component: resolve=>(require(['../views/About'],resolve)) 
+    // vue-router实现懒加载的作用：性能优化，不用到该路由，不加载该组件。
+    </script>
+  </body>
+</html>
