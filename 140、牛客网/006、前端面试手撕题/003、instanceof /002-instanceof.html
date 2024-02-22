@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************实现instanceof******************')  
+    /*
+      1、获取首个对象参数的原型对象
+      2、获取Fn函数的原型对象
+      3、进入死循环，当两个参数的原型对象相等时返回true
+      4、当两个参数的原型对象不相等时获取首个对象参数原型的原型并且循环该步骤直到null时返回false
+    */
+    const _instanceof = (target, Fn) => {
+        let proto = target.__proto__
+        let prototype = Fn.prototype
+        while(true) {
+            if(proto === null) return false
+            if(proto === prototype) return true
+            proto = proto.__proto__
+        }
+    }
+    //  开始测试
+    var a = [];
+    var b = {};
+
+    function Foo(){};
+    var c = new Foo();
+
+    function child(){};
+    function father(){};
+    child.prototype = new father();
+    var d = new child();
+
+    console.log(instance_of(a, Array));                   // true
+    console.log(instance_of(b, Object));                  // true
+    console.log(instance_of(b, Array));                   // false
+    console.log(instance_of(a, Object));                  // true
+    console.log(instance_of(c, Foo));                     // true
+    console.log(instance_of(d, child));                   // true
+    console.log(instance_of(d, father));                  // true
+
+    console.log("*****分割线**********")
+    const m = 'abc';
+    console.log( m instanceof String);                    // false
+
+    const n = new String('abc');
+    console.log( n instanceof String);                    // true
+
+    console.log("*****分割线**********")
+    console.log(String instanceof String);                // false
+    console.log(Object instanceof Object);                // true
+    console.log(Function instanceof Function);            // true
+    console.log(Function instanceof Object);              // true
+    </script>
+  </body>
+</html>

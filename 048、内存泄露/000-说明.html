@@ -32,7 +32,14 @@
       限制使用的全局对象的大小
       将变量a = null
      */
-
+     
+     function fun(){
+       a = 10;
+       this.b = 20;
+     }
+     fun();
+     console.log(a);  // 10
+     console.log(b);  // 20
     </script>
   </body>
 </html>

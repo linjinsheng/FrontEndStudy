@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+      //  es5
+      function User(){};
+      var user = new User();
+      //  通过user的__proto__属性来获取原型对象
+      user.__proto__ = {name: "xiaoming"};
+      console.log(user.name);     // xiaoming
+    </script>
+  </body>
+</html>

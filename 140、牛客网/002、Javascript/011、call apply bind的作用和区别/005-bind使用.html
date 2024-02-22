@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+      <button>点击1</button>
+      <button>点击2</button>
+      <button>点击3</button>
+    </div>
+    
+    <script>
+
+      console.log('------bind()方法----')
+      var baby = {
+          name: 'Dot'
+      }
+
+      function printName() {
+          console.log(this.name)
+      }
+
+      var dot = printName.bind(baby)
+      console.log(dot) // function () { … }
+      dot()  // Dot
+
+
+      //  bind方法第一个参数是要绑定给this的值，后面传入的是参数列表。当第一个参数为null、undefined时，默认指向window。
+      //  bind方法不同的是不会调用函数，但是能改变this指向，返回的是原函数改变this之后产生的新函数
+      //  如果只是想改变 this 指向,并且不想调用这个函数的时候，可以使用bind。
+
+      var obj = {
+        name: 'zs'
+      }
+      function fn(a, b) {
+            console.log(this);//obj
+            console.log(a + b);//3
+      }
+      var f = fn.bind(obj, 1, 2);
+      f();//调用改变this之后的函数
+
+        //  应用场景：不调用函数,但是还想改变this指向
+        //  例如：多个按钮，点哪个按钮就禁用哪个按钮，2秒之后再开启这个按钮
+        var btns = document.querySelectorAll('button');
+          for (var i = 0; i < btns.length; i++) {
+              btns[i].onclick = function() {
+                  this.disabled = true;
+                  setTimeout(function() {
+                    console.log('定时器内部this---'+this)
+                      this.disabled = false; 
+                  }.bind(this), 2000)
+              }
+        }
+    </script>
+  </body>
+</html>

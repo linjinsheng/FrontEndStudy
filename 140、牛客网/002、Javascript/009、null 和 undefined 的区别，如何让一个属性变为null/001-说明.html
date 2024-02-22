@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /*
+      null和undefined都是原始数据类型
+      null代表空对象
+      undefined代表未定义
+    */ 
+
+
+    /*
+     ==  先进行转换成操作数据类型,再进行比较
+     === 不进行转换成操作数据类型,仅比较
+    */
+
+    console.log(typeof undefined);      //  undefined
+    console.log(typeof null);           //  object
+
+    /*
+      JavaScript 数据类型在底层都是以二进制的形式表示的，二进制的前三位为0,会被typeof 判断为对象类型，
+      而null 的二进制位恰好都是 0 ，因此，null 被误判断为 Object 类型。对象被赋值了null以后，
+      对象对应的堆内存中的值就是游离状态了，GC会择机回收该值并释放内存。
+      因此，需要释放某个对象，就将变量设置为null，即表示该对象已经被清空，目前无效状态。
+    */
+
+    var un;
+    var n = null;
+    if(un == n){
+      console.log('equal');
+    } else {
+      console.log('unequal');
+    }
+    
+    </script>
+  </body>
+</html>

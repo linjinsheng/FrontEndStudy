@@ -10,27 +10,33 @@
     /**
      * 第一次调用是绑定函数，第二次调用是返回结果，那么我们就需要返回一个函数
      */
-     Function.prototype.newBind = function (context){
-       const that = this;
-       // 获取除第一个参数外的其余参数
-       const oArg = [...arguments].slice(1);
-       // 当第二次调用的时候,利用newApply来实现
-       return function(...arg) {
-         return that.newApply(context, [...oArg, ...arg]);
-       }
-     }
+    //  Function.prototype.newBind = function (context){
+    //    const that = this;
+    //    // 获取除第一个参数外的其余参数
+    //    const oArg = [...arguments].slice(1);
+    //    // 当第二次调用的时候,利用newApply来实现
+    //    return function(...arg) {
+    //      return that.newApply(context, [...oArg, ...arg]);
+    //    }
+    //  }
 
-     Function.prototype.newApply = function(context, arg){
-      //  获取代指向的对象,没有就使用window
-      let ctx = context || window;
-      //  将当前调用newCall的函数临时复制给指定的上下文
-      ctx.fn = this;
-      //  将第二个数组参数解析为普通参数依次传递
-      const res = ctx.fn(...arg);
-      //  删除,避免污染全局
-      delete ctx.fn;
-      return res;
-    }
+    //  Function.prototype.newApply = function(context, arg){
+    //   //  获取代指向的对象,没有就使用window
+    //   let ctx = context || window;
+    //   //  将当前调用newCall的函数临时复制给指定的上下文
+    //   ctx.fn = this;
+    //   //  将第二个数组参数解析为普通参数依次传递
+    //   const res = ctx.fn(...arg);
+    //   //  删除,避免污染全局
+    //   delete ctx.fn;
+    //   return res;
+    // }
+    Function.prototype._bind = function(target, ...arguments1) {
+            const _this = this
+            return function(...arguments2) {
+                return _this.apply(target,arguments1.concat(arguments2))
+            }
+        }
 
     var name = "zhangsan";
     var obj = {
@@ -39,7 +45,7 @@
         console.log(this.name, ...arg);
       }
     };
-    obj.getName.newBind(obj, '年龄22')('体重120');
+    obj.getName._bind(obj, '年龄22')('体重120');
     </script>
   </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /**
+    创建ajax过程： 
+    1. 创建XHR对象：new XMLHttpRequest() 
+    
+    2. 设置请求参数：request.open(Method, 服务器接口地址); 
+    
+    3. 发送请求: request.send()，如果是get请求不需要参数，post请求需要参数request.send(data) 
+    
+    4. 监听请求成功后的状态变化：根据状态码进行相应的处理。 
+        XHR.onreadystatechange = function () { 
+          if (XHR.readyState == 4 && XHR.status == 200) { 
+            console.log(XHR.responseText); // 主动释放,JS本身也会回收的 
+            XHR = null; 
+          } 
+        };
+    */
+    </script>
+  </body>
+</html>

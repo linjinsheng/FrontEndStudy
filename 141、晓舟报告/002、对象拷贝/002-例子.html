@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    let stu = {
+      name: "xiaoming"
+    }
+    function fun(obj){
+      //  obj克隆对象
+      obj.name = "xiaohong";
+    }
+    fun(stu);
+    console.log(stu);   //  {name: 'xiaohong'}
+    </script>
+  </body>
+</html>

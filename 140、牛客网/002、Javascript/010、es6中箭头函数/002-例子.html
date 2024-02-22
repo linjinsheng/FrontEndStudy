@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    //  call()、apply()、bind()等方法不能改变箭头函数的this的指向
+    var id = 'GLOBAL';
+    let fun1 = () =>{
+      console.log(this.id);
+    };
+    fun1();                       // 'GLOBAL'
+    fun1.call({id: 'OBJ'});       // 'GLOBAL'
+    fun1.apply({id: 'OBJ'});      // 'GLOBAL'
+    fun1.bind({id: 'OBJ'})();     // 'GLOBAL'
+    </script>
+  </body>
+</html>

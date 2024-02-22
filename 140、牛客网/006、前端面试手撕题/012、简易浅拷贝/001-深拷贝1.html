@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>浅拷贝</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------采用递归去拷贝所有层级属性-----')
+    const deepCopy = target => {
+        if(typeof target === 'object' && target !== null) {
+            const cloneTarget = Array.isArray(target) ? [] : {}
+            for(let prop in target) {
+                if(target.hasOwnProperty(prop)) {
+                    cloneTarget[prop] = deepCopy(target[prop])
+                }
+            }
+            return cloneTarget
+        } else {
+            return target
+        }
+    }
+
+    var obj1 = {
+      a: 1,
+      b: 2,
+      c: {
+        d: 3
+      }
+    }
+    var obj2 = deepCopy(obj1);
+    obj2.a = 3;
+    obj2.c.d = 4;
+    console.log('obj1---',obj1);
+    console.log('obj2---',obj2);
+    </script>
+  </body>
+</html>

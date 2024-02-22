@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class类别</title>
+  </head>
+  <body>
+    <script>
+    console.log('*******************************')
+    console.log('------说一说cookie sessionStorage localStorage 区别-----')
+    /**
+      Cookie
+      用途: 主要用于解决网络中的两个请求是否由同一用户发起的问题
+      属性:
+      1)、 大小4kb,纯文本文件;
+      2)、每次发起Http请求都会携带cookie;
+
+      使用场景
+      1)、Cookie和session结合使用,将sessionId存储到Cookie中,每次发送请求都会携带这个sessionId,
+      这样服务端就知道是谁发起的请求,从而响应响应的信息;
+      2)、用来统计页面的点击次数.
+    */
+
+    /**
+     LocalStorage
+     用途: 存储的信息较大,Cookie不能满足我们的需求;
+      属性: 
+      1)、大小10mb,可以存储更多的信息;
+      2)、持久存储,除非主动清理,不然会永久存在;
+      3)、仅存储在本地
+
+      使用场景
+      1)、网站换肤功能,可将换肤信息存储在本地的LocalStorage中
+      2)、在网站中的用户浏览信息会存储在LocalStorage中,还有网站中一些不常变动的个人信息存储在LocalStorage中	
+     */ 
+
+      /**
+       SessionStorage
+        用途: 主要用于临时保存同一窗口(或标签页)的数据,刷新页面时不会删除,关闭窗口或标签页之后将会删除这些数据;
+        属性: 
+        1)、大小5mb,在本地进行数据存储;
+        2)、同源策略,只有在同一浏览器的同一窗口下才能够共享;
+        3)、都不能被爬虫爬取;
+
+      使用场景
+      1)、由于SessionStorage具有时效性,可以用来存储一些网站的游客登录的信息,还有临时的浏览记录的信息,
+      当关闭网站以后,这些信息就随之消除了.
+     */ 
+
+     /**
+                  Cookie                LocalStorage           SessionStorage
+      容量          4kb                  10mb                   5mb
+      作用域        同源                  同源                    同源
+      过期时间      手动设置               永久                    当前网页关闭
+      位置         浏览器/服务端           浏览器                  浏览器
+      */
+    </script>
+  </body>
+</html>

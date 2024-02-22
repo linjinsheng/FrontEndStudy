@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    console.log((2).constructor === Number);                  // true
+    console.log((true).constructor === Boolean);              // true
+    console.log(('abc').constructor === String);              // true
+    console.log(([1, 2, 3]).constructor === Array);           // true
+    console.log((function(){}).constructor === Function);     // true
+    console.log(({a: 2}).constructor === Object);             // true
+    console.log('null、undefined没有constructor')
+    </script>
+  </body>
+</html>

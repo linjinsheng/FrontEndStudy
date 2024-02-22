@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*************实现Object.create******************')
+    /**
+     * 
+      1、创建一个临时函数
+      2、将该临时函数的原型指向对象参数
+      3、返回该临时对象的实例
+    */
+    const _objectCreate = proto => {
+      if(typeof proto !== 'object' || proto === null) return;
+      const fn = function() {};
+      fn.prototype = proto;
+      return new fn();     
+    }
+    let obj = {
+      name: '张三',
+      age: 20
+    }
+    var newObj = _objectCreate(obj);
+    console.log(newObj);
+    console.log(newObj.name);
+    console.log(newObj.age);   
+    </script>
+  </body>
+</html>

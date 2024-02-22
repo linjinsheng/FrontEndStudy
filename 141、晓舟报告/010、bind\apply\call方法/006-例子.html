@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+    let cat = {
+      name: "maomao"
+    }
+
+    let dog = {
+      name: "wangwang",
+      eat(food1, food2){
+        console.log(`我是${this.name},我喜欢吃${food1}和${food2}`);
+      }
+    }
+    dog.eat('骨头', '牛肉');             // 我是wangwang,我喜欢吃骨头和牛肉
+    dog.eat.call(cat,'鱼头', '猪肉');    // 我是maomao,我喜欢吃鱼头和猪肉
+    </script>
+  </body>
+</html>

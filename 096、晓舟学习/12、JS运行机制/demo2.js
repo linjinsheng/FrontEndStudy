@@ -15,3 +15,13 @@ setTimeout(()=>{console.log(2)}, 0);
 setTimeout(()=>{console.log(3)}, 8);
 setTimeout(()=>{console.log(4)}, 10);
 console.log(5);
+
+/**
+ 1
+ 5
+ 6
+ 2
+ 0
+ 3
+ 4
+ */

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    var id = 'GLOBAL';
+    var obj = {
+      id: 'OBJ',
+      a: function(){
+        console.log(this.id);
+      },
+      b:()=>{
+        console.log(this.id);
+      }
+    };
+    obj.a();                //  'OBJ'
+    obj.b();                //  'GLOBAL'
+    new obj.a();            //  undefined;
+    new obj.b();            //  Uncaught TypeError: obj.b is not a constructor
+    </script>
+  </body>
+</html>

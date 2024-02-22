@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>    
+    <script>
+    console.log('*******************************')
+    let cat = {
+      name: "maomao"
+    }
+
+    let dog = {
+      name: "wangwang",
+      sayName(){
+        console.log("我是" + this.name);
+      }
+    }
+    dog.sayName();          //  我是wangwang
+    dog.sayName.call(cat);  //  我是maomao
+    </script>
+  </body>
+</html>

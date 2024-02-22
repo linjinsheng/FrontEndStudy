@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+    </head>
+    <body>
+    	<ul>
+            <li>.</li>
+            <li>.</li>
+            <li>.</li>
+        </ul>
+
+        <script type="text/javascript">
+        // 补全代码
+        let ul = document.querySelector('ul');
+        ul.addEventListener('click', e => {
+            //  在IE/Opera中，用window.event写法，
+            //  在Firefox里面,用event写法
+            let event = e || window.event;
+            // IE中，event对象有srcElement属性，但是没有target属性。
+            // firefox中，event对象有target属性，但是没有srcElement属性。
+            let target = event.target || event.srcElement;
+            target.innerText += '.';
+        })
+        </script>
+    </body>
+</html>

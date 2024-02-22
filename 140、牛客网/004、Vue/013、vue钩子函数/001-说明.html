@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+  </head>
+  <body>
+    <div id="container"> 
+    </div>
+    
+    <script>
+    console.log('*******************************')
+    /**
+      钩子函数用来描述一个组件从引入到退出的全过程中的某个过程，整个过程称为生命周期。 
+      钩子函数按照组件生命周期的过程分为，挂载阶段=>更新阶段=>销毁阶段。 
+      
+      每个阶段对应的钩子函数 
+      挂载阶段：beforeCreate、created、beforeMounted、mounted
+      更新阶段：beforeUpdate、updated
+      销毁阶段：beforeDestroy、destroyed
+
+      父子组件钩子函数在三个阶段的代码执行顺序 
+      挂载：父亲created> 子created > 子mounted> 父亲mounted> 
+      更新：父亲beforeUpdate > 子beforeUpdated > 子updated > 父亲updated 
+      销毁：父亲beforeDestroy> 子beforeDestroy > 子destroyed> 父destroyed
+     */
+    </script>
+  </body>
+</html>
